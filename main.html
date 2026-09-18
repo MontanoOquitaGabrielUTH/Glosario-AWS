@@ -3,74 +3,65 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AWS — Glosario para estudiar</title>
+<title>AWS — Glosario Unificado</title>
 <style>
-  *{box-sizing:border-box}
-  body{
-    margin:0;font-family:Inter,Segoe UI,Arial,sans-serif;
-    background:#f5f7fb;color:#172033;line-height:1.5
-  }
-  header{
-    background:linear-gradient(135deg,#101b3d,#263f7a);
-    color:white;padding:42px 20px 34px;text-align:center
-  }
-  header h1{margin:0 0 8px;font-size:clamp(30px,5vw,48px)}
-  header p{margin:0;color:#dce5ff;font-size:17px}
-  .container{max-width:1150px;margin:auto;padding:24px 18px 50px}
-  .toolbar{
-    position:sticky;top:0;z-index:10;background:#f5f7fb;padding:14px 0;
-    display:flex;gap:10px;flex-wrap:wrap
-  }
-  input{
-    flex:1;min-width:240px;padding:13px 16px;border:1px solid #d5dbea;
-    border-radius:12px;font-size:16px;outline:none;background:white
-  }
-  input:focus{border-color:#536dfe;box-shadow:0 0 0 3px #536dfe22}
-  button{
-    border:0;border-radius:10px;padding:10px 14px;background:white;
-    color:#26304a;border:1px solid #d5dbea;cursor:pointer;font-weight:600
-  }
-  button.active,button:hover{background:#263f7a;color:white;border-color:#263f7a}
-  .section-title{margin:30px 0 14px;font-size:25px}
-  .grid{
-    display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px
-  }
-  .card{
-    background:white;border:1px solid #e0e4ef;border-radius:16px;padding:20px;
-    box-shadow:0 5px 18px #18254b0b;transition:.18s
-  }
-  .card:hover{transform:translateY(-3px);box-shadow:0 10px 25px #18254b18}
-  .tag{
-    display:inline-block;background:#eef2ff;color:#3049a5;border-radius:20px;
-    padding:4px 9px;font-size:12px;font-weight:700;margin-bottom:9px
-  }
-  .card h3{margin:0 0 8px;font-size:20px}
-  .def{margin:0 0 12px}
-  .compare{
-    margin:0;padding:11px 12px;background:#f7f8fc;border-left:4px solid #536dfe;
-    border-radius:8px;font-size:14px
-  }
-  .compare strong{display:block;margin-bottom:2px}
-  .empty{
-    text-align:center;padding:45px;background:white;border-radius:16px;
-    border:1px dashed #cdd3e1;display:none
-  }
-  .model{
-    display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px
-  }
-  .model .card{border-top:5px solid #536dfe}
-  footer{text-align:center;color:#69728a;font-size:13px;margin-top:35px}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Inter,Segoe UI,Arial,sans-serif;background:#f5f7fb;color:#172033;line-height:1.5}
+header{background:linear-gradient(135deg,#101b3d,#263f7a);color:#fff;padding:42px 20px 34px;text-align:center}
+header h1{margin:0 0 8px;font-size:clamp(30px,5vw,48px)}
+header p{margin:0;color:#dce5ff;font-size:17px}
+.container{max-width:1200px;margin:auto;padding:24px 18px 55px}
+.toolbar{position:sticky;top:0;z-index:20;background:#f5f7fb;padding:14px 0;display:flex;gap:9px;flex-wrap:wrap}
+input{flex:1;min-width:240px;padding:13px 16px;border:1px solid #d5dbea;border-radius:12px;font-size:16px;outline:none;background:#fff}
+input:focus{border-color:#536dfe;box-shadow:0 0 0 3px #536dfe22}
+button{border:1px solid #d5dbea;border-radius:10px;padding:10px 14px;background:#fff;color:#26304a;cursor:pointer;font-weight:600}
+button:hover,button.active{background:#263f7a;color:#fff;border-color:#263f7a}
+.module-nav{display:flex;gap:10px;flex-wrap:wrap;margin:4px 0 25px}
+.module-nav button{font-size:15px}
+.section-title{margin:30px 0 14px;font-size:26px;display:flex;align-items:center;gap:9px}
+.section-subtitle{margin:28px 0 13px;font-size:20px;color:#263f7a}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:16px}
+.card{background:#fff;border:1px solid #e0e4ef;border-radius:16px;padding:20px;box-shadow:0 5px 18px #18254b0b;transition:.18s}
+.card:hover{transform:translateY(-3px);box-shadow:0 10px 25px #18254b18}
+.card.hidden{display:none}
+.tag{display:inline-block;background:#eef2ff;color:#3049a5;border-radius:20px;padding:4px 9px;font-size:12px;font-weight:700;margin-bottom:9px}
+.tag.m2{background:#e7f8f6;color:#08766e}
+.card h3{margin:0 0 8px;font-size:20px}
+.def{margin:0 0 12px}
+.compare{margin:0;padding:11px 12px;background:#f7f8fc;border-left:4px solid #536dfe;border-radius:8px;font-size:14px}
+.compare strong{display:block;margin-bottom:2px}
+.complement{margin:10px 0 0;padding:10px 12px;background:#effaf8;border-left:4px solid #15998f;border-radius:8px;font-size:14px}
+.complement strong{display:block;color:#08766e;margin-bottom:2px}
+.module-block{scroll-margin-top:90px}
+.empty{text-align:center;padding:45px;background:#fff;border-radius:16px;border:1px dashed #cdd3e1;display:none;margin-top:20px}
+.note{background:#fff;border:1px solid #e0e4ef;border-radius:16px;padding:18px;margin:18px 0}
+.note strong{color:#263f7a}
+.price-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+.price-card{background:#fff;border:1px solid #e0e4ef;border-radius:16px;padding:19px}
+.price-card h3{margin:0 0 9px}
+.price-card ul{margin:0;padding-left:20px}
+.support-table{width:100%;border-collapse:collapse;background:#fff;border-radius:14px;overflow:hidden;font-size:14px}
+.support-table th,.support-table td{border:1px solid #dde2ec;padding:11px;text-align:center}
+.support-table th{background:#edf0f4}
+.support-table td:first-child,.support-table th:first-child{text-align:left;font-weight:700}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.step{background:#fff;border:1px solid #e0e4ef;border-radius:14px;padding:17px;text-align:center}
+.step b{display:block;color:#263f7a;font-size:18px;margin-bottom:5px}
+footer{text-align:center;color:#69728a;font-size:13px;margin-top:35px}
+@media(max-width:760px){.steps{grid-template-columns:1fr 1fr}.support-table{font-size:12px}.support-table th,.support-table td{padding:7px}}
+@media(max-width:480px){.steps{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
 <header>
-  <h1>☁️ AWS — Glosario para estudiar</h1>
-  <p>Definición rápida + comparación sencilla para memorizar los conceptos.</p>
+  <h1>☁️ AWS — Glosario Unificado</h1>
+  <p>Módulos 1 y 2 · Definiciones rápidas, comparaciones y complementos para estudiar.</p>
 </header>
 
 <main class="container">
   <div class="toolbar">
-    <input id="search" type="search" placeholder="🔎 Buscar EC2, S3, VPC, IAM...">
+    <input id="search" type="search" placeholder="🔎 Buscar EC2, S3, VPC, IAM, TCO, Organizations...">
     <button class="active" data-filter="all">Todos</button>
     <button data-filter="compute">Cómputo</button>
     <button data-filter="storage">Almacenamiento</button>
@@ -78,247 +69,473 @@
     <button data-filter="network">Redes</button>
     <button data-filter="security">Seguridad</button>
     <button data-filter="management">Administración</button>
+    <button data-filter="cost">Costos</button>
+    <button data-filter="support">Soporte</button>
   </div>
 
-  <h2 class="section-title">Modelos de servicio</h2>
-  <section class="model">
-    <article class="card" data-cat="all" data-text="iaas infraestructura como servicio">
-      <span class="tag">IaaS</span><h3>Infraestructura como servicio</h3>
-      <p class="def">Proporciona recursos de infraestructura como servidores, redes y almacenamiento.</p>
-      <p class="compare"><strong>Comparación:</strong> Como rentar un servidor y configurarlo.</p>
-    </article>
-    <article class="card" data-cat="all" data-text="paas plataforma como servicio">
-      <span class="tag">PaaS</span><h3>Plataforma como servicio</h3>
-      <p class="def">Proporciona una plataforma preparada para desarrollar y ejecutar aplicaciones.</p>
-      <p class="compare"><strong>Comparación:</strong> Como rentar un entorno ya preparado para programar.</p>
-    </article>
-    <article class="card" data-cat="all" data-text="saas software como servicio">
-      <span class="tag">SaaS</span><h3>Software como servicio</h3>
-      <p class="def">Ofrece software listo para utilizar a través de Internet.</p>
-      <p class="compare"><strong>Comparación:</strong> Como usar una aplicación sin administrar su infraestructura.</p>
-    </article>
+  <div class="module-nav">
+    <button onclick="document.getElementById('mod1').scrollIntoView()">📘 Módulo 1</button>
+    <button onclick="document.getElementById('mod2').scrollIntoView()">📗 Módulo 2</button>
+  </div>
+
+  <div class="note">
+    <strong>💡 Cómo está organizado:</strong> los conceptos que aparecen en ambos módulos se mantienen relacionados y se les agrega la información nueva del Módulo 2. Así puedes estudiar el concepto básico y después su complemento sin tener que buscarlo por separado.
+  </div>
+
+  <!-- ==================== MÓDULO 1 ==================== -->
+  <section id="mod1" class="module-block">
+    <h2 class="section-title">📘 Módulo 1 — Fundamentos y servicios de AWS</h2>
+
+    <h3 class="section-subtitle">Modelos de servicio</h3>
+    <section class="grid">
+      <article class="card" data-cat="management" data-text="iaas infraestructura como servicio">
+        <span class="tag">Módulo 1 · IaaS</span><h3>Infraestructura como servicio</h3>
+        <p class="def">Proporciona recursos de infraestructura como servidores, redes y almacenamiento.</p>
+        <p class="compare"><strong>Comparación:</strong> Como rentar un servidor y configurarlo.</p>
+      </article>
+      <article class="card" data-cat="management" data-text="paas plataforma como servicio">
+        <span class="tag">Módulo 1 · PaaS</span><h3>Plataforma como servicio</h3>
+        <p class="def">Proporciona una plataforma preparada para desarrollar y ejecutar aplicaciones.</p>
+        <p class="compare"><strong>Comparación:</strong> Como rentar un entorno ya preparado para programar.</p>
+      </article>
+      <article class="card" data-cat="management" data-text="saas software como servicio">
+        <span class="tag">Módulo 1 · SaaS</span><h3>Software como servicio</h3>
+        <p class="def">Ofrece software listo para utilizar a través de Internet.</p>
+        <p class="compare"><strong>Comparación:</strong> Como usar una aplicación sin administrar su infraestructura.</p>
+      </article>
+    </section>
+
+    <h3 class="section-subtitle">Cómputo</h3>
+    <section class="grid">
+      <article class="card" data-cat="compute" data-text="ec2 elastic compute cloud servidor instancia">
+        <span class="tag">Cómputo</span><h3>Amazon EC2</h3>
+        <p class="def">Servicio que permite utilizar servidores virtuales en la nube.</p>
+        <p class="compare"><strong>Comparación:</strong> Como tener un servidor propio, pero virtual y en la nube.</p>
+      </article>
+      <article class="card" data-cat="compute" data-text="lambda codigo serverless">
+        <span class="tag">Cómputo</span><h3>AWS Lambda</h3>
+        <p class="def">Permite ejecutar código sin administrar directamente los servidores.</p>
+        <p class="compare"><strong>Comparación:</strong> Como ejecutar una tarea automáticamente sin preocuparte por el servidor.</p>
+      </article>
+      <article class="card" data-cat="compute" data-text="elastic beanstalk aplicaciones beanstalk sin cargo modulo 2">
+        <span class="tag">Cómputo</span><h3>AWS Elastic Beanstalk</h3>
+        <p class="def">Facilita implementar y administrar aplicaciones en AWS.</p>
+        <p class="compare"><strong>Comparación:</strong> Como subir una aplicación y dejar que AWS gestione gran parte de la configuración.</p>
+        <p class="complement"><strong>🔁 Complemento Módulo 2:</strong> Elastic Beanstalk aparece entre los servicios sin cargo; los servicios o recursos utilizados junto con él pueden generar cargos.</p>
+      </article>
+      <article class="card" data-cat="compute" data-text="ecs contenedores">
+        <span class="tag">Cómputo</span><h3>Amazon ECS</h3>
+        <p class="def">Servicio para ejecutar y administrar contenedores.</p>
+        <p class="compare"><strong>Comparación:</strong> Como administrar aplicaciones empaquetadas en contenedores.</p>
+      </article>
+      <article class="card" data-cat="compute" data-text="eks kubernetes">
+        <span class="tag">Cómputo</span><h3>Amazon EKS</h3>
+        <p class="def">Servicio administrado para ejecutar Kubernetes en AWS.</p>
+        <p class="compare"><strong>Comparación:</strong> Como usar Kubernetes sin administrar toda su infraestructura.</p>
+      </article>
+      <article class="card" data-cat="compute" data-text="fargate contenedores">
+        <span class="tag">Cómputo</span><h3>AWS Fargate</h3>
+        <p class="def">Permite ejecutar contenedores sin administrar los servidores.</p>
+        <p class="compare"><strong>Comparación:</strong> Como usar contenedores sin preocuparte por el servidor.</p>
+      </article>
+      <article class="card" data-cat="compute" data-text="outposts infraestructura local">
+        <span class="tag">Cómputo</span><h3>AWS Outposts</h3>
+        <p class="def">Lleva infraestructura y servicios de AWS a instalaciones locales.</p>
+        <p class="compare"><strong>Comparación:</strong> Como tener parte de AWS dentro de tu propia empresa.</p>
+      </article>
+      <article class="card" data-cat="compute" data-text="lightsail servidor sencillo">
+        <span class="tag">Cómputo</span><h3>Amazon Lightsail</h3>
+        <p class="def">Servicio simplificado para crear recursos y aplicaciones.</p>
+        <p class="compare"><strong>Comparación:</strong> Como una forma sencilla de montar un servidor.</p>
+      </article>
+    </section>
+
+    <h3 class="section-subtitle">Almacenamiento</h3>
+    <section class="grid">
+      <article class="card" data-cat="storage" data-text="s3 almacenamiento archivos objetos simple storage service">
+        <span class="tag">Almacenamiento</span><h3>Amazon S3</h3>
+        <p class="def">Servicio para almacenar archivos y objetos en la nube.</p>
+        <p class="compare"><strong>Comparación:</strong> Como un disco duro gigante en Internet.</p>
+        <p class="complement"><strong>🔁 Complemento Módulo 2:</strong> En el modelo de precios, el almacenamiento normalmente se cobra por GB y puede tener precios por niveles según el volumen de uso.</p>
+      </article>
+      <article class="card" data-cat="storage" data-text="ebs almacenamiento bloques disco ec2 elastic block store">
+        <span class="tag">Almacenamiento</span><h3>Amazon EBS</h3>
+        <p class="def">Almacenamiento de bloques utilizado con instancias EC2.</p>
+        <p class="compare"><strong>Comparación:</strong> Como conectar un disco duro a tu servidor.</p>
+        <p class="complement"><strong>🔁 Complemento Módulo 2:</strong> Su precio de almacenamiento normalmente se expresa por GB y el costo puede disminuir según el volumen.</p>
+      </article>
+      <article class="card" data-cat="storage" data-text="efs sistema archivos compartido elastic file system">
+        <span class="tag">Almacenamiento</span><h3>Amazon EFS</h3>
+        <p class="def">Sistema de archivos que puede compartirse entre recursos.</p>
+        <p class="compare"><strong>Comparación:</strong> Como una carpeta de red compartida.</p>
+        <p class="complement"><strong>🔁 Complemento Módulo 2:</strong> Al igual que S3 y EBS, aparece como ejemplo de almacenamiento con precios por niveles según el uso.</p>
+      </article>
+      <article class="card" data-cat="storage" data-text="glacier almacenamiento archivo s3 glacier">
+        <span class="tag">Almacenamiento</span><h3>Amazon S3 Glacier</h3>
+        <p class="def">Servicio de almacenamiento incluido en la categoría de almacenamiento de AWS.</p>
+        <p class="compare"><strong>Comparación:</strong> Como un archivo de almacenamiento para conservar información.</p>
+      </article>
+    </section>
+
+    <h3 class="section-subtitle">Bases de datos</h3>
+    <section class="grid">
+      <article class="card" data-cat="database" data-text="rds base datos relacional">
+        <span class="tag">Base de datos</span><h3>Amazon RDS</h3>
+        <p class="def">Servicio para crear y administrar bases de datos relacionales.</p>
+        <p class="compare"><strong>Comparación:</strong> Como tener un servidor de base de datos administrado por AWS.</p>
+      </article>
+      <article class="card" data-cat="database" data-text="dynamodb base datos nosql">
+        <span class="tag">Base de datos</span><h3>Amazon DynamoDB</h3>
+        <p class="def">Servicio de base de datos incluido entre los servicios de bases de datos de AWS.</p>
+        <p class="compare"><strong>Comparación:</strong> Como una base de datos administrada en la nube.</p>
+      </article>
+      <article class="card" data-cat="database" data-text="redshift base datos">
+        <span class="tag">Base de datos</span><h3>Amazon Redshift</h3>
+        <p class="def">Servicio incluido en la categoría de bases de datos de AWS.</p>
+        <p class="compare"><strong>Comparación:</strong> Como una plataforma de datos administrada en la nube.</p>
+      </article>
+      <article class="card" data-cat="database" data-text="aurora base datos">
+        <span class="tag">Base de datos</span><h3>Amazon Aurora</h3>
+        <p class="def">Servicio de base de datos incluido entre las opciones de AWS.</p>
+        <p class="compare"><strong>Comparación:</strong> Como una base de datos relacional administrada en la nube.</p>
+      </article>
+    </section>
+
+    <h3 class="section-subtitle">Redes y seguridad</h3>
+    <section class="grid">
+      <article class="card" data-cat="network" data-text="vpc red virtual amazon vpc sin cargo">
+        <span class="tag">Redes</span><h3>Amazon VPC</h3>
+        <p class="def">Permite crear una red virtual para los recursos de AWS.</p>
+        <p class="compare"><strong>Comparación:</strong> Como crear tu propia red local, pero dentro de AWS.</p>
+        <p class="complement"><strong>🔁 Complemento Módulo 2:</strong> Amazon VPC aparece entre los servicios sin cargo. Los recursos utilizados dentro de la VPC sí pueden generar costos.</p>
+      </article>
+      <article class="card" data-cat="network" data-text="route 53 dns">
+        <span class="tag">Redes</span><h3>Amazon Route 53</h3>
+        <p class="def">Servicio incluido en la categoría de redes y entrega de contenido.</p>
+        <p class="compare"><strong>Comparación:</strong> Como el sistema que ayuda a dirigir nombres de dominio hacia recursos.</p>
+      </article>
+      <article class="card" data-cat="network" data-text="cloudfront contenido cdn">
+        <span class="tag">Redes</span><h3>Amazon CloudFront</h3>
+        <p class="def">Servicio incluido en redes y entrega de contenido de AWS.</p>
+        <p class="compare"><strong>Comparación:</strong> Como una red que acerca el contenido a los usuarios.</p>
+      </article>
+      <article class="card" data-cat="network" data-text="load balancing balanceador trafico elastic load balancing">
+        <span class="tag">Redes</span><h3>Elastic Load Balancing</h3>
+        <p class="def">Distribuye el tráfico entre diferentes recursos.</p>
+        <p class="compare"><strong>Comparación:</strong> Como repartir clientes entre varios empleados para evitar sobrecargar a uno.</p>
+      </article>
+      <article class="card" data-cat="security" data-text="iam identidad permisos usuarios identity access management sin cargo">
+        <span class="tag">Seguridad</span><h3>AWS IAM</h3>
+        <p class="def">Administra identidades, usuarios y permisos de acceso a recursos.</p>
+        <p class="compare"><strong>Comparación:</strong> Como las cuentas, contraseñas y permisos de una empresa.</p>
+        <p class="complement"><strong>🔁 Complemento Módulo 2:</strong> IAM aparece entre los servicios sin cargo; otros servicios de AWS utilizados con él pueden generar cargos.</p>
+      </article>
+      <article class="card" data-cat="security" data-text="security groups firewall">
+        <span class="tag">Seguridad</span><h3>Grupos de seguridad</h3>
+        <p class="def">Controlan el tráfico permitido hacia los recursos asociados.</p>
+        <p class="compare"><strong>Comparación:</strong> Como un firewall que decide qué conexiones pueden pasar.</p>
+      </article>
+      <article class="card" data-cat="security" data-text="acl red trafico network acl">
+        <span class="tag">Seguridad</span><h3>ACL de red</h3>
+        <p class="def">Controla el tráfico que puede entrar o salir de una red.</p>
+        <p class="compare"><strong>Comparación:</strong> Como un filtro de seguridad colocado en la entrada de una red.</p>
+      </article>
+      <article class="card" data-cat="security" data-text="shield seguridad">
+        <span class="tag">Seguridad</span><h3>AWS Shield</h3>
+        <p class="def">Servicio incluido en la categoría de seguridad, identidad y conformidad.</p>
+        <p class="compare"><strong>Comparación:</strong> Como una capa de protección para los recursos.</p>
+      </article>
+    </section>
+
+    <h3 class="section-subtitle">Administración y herramientas</h3>
+    <section class="grid">
+      <article class="card" data-cat="management" data-text="cloudwatch administracion monitoreo">
+        <span class="tag">Administración</span><h3>AWS CloudWatch</h3>
+        <p class="def">Servicio incluido en administración y gobernanza para supervisar recursos y aplicaciones.</p>
+        <p class="compare"><strong>Comparación:</strong> Como un panel para vigilar cómo funcionan tus recursos.</p>
+      </article>
+      <article class="card" data-cat="management" data-text="cloudtrail auditoria">
+        <span class="tag">Administración</span><h3>AWS CloudTrail</h3>
+        <p class="def">Servicio incluido en administración y gobernanza para registrar actividades de AWS.</p>
+        <p class="compare"><strong>Comparación:</strong> Como un registro que permite saber qué acciones ocurrieron.</p>
+      </article>
+      <article class="card" data-cat="management cost" data-text="cost explorer costos uso herramienta">
+        <span class="tag">Administración de costos</span><h3>AWS Cost Explorer</h3>
+        <p class="def">Herramienta para analizar los costos y el uso de AWS.</p>
+        <p class="compare"><strong>Comparación:</strong> Como revisar los gastos de tu servicio en una gráfica.</p>
+        <p class="complement"><strong>🔁 Complemento Módulo 2:</strong> Forma parte de las herramientas mostradas para consultar y analizar costos y uso.</p>
+      </article>
+      <article class="card" data-cat="management" data-text="consola administracion aws management console">
+        <span class="tag">Herramientas</span><h3>Consola de administración de AWS</h3>
+        <p class="def">Interfaz gráfica para administrar los servicios de AWS.</p>
+        <p class="compare"><strong>Comparación:</strong> Como administrar AWS con ventanas y botones.</p>
+      </article>
+      <article class="card" data-cat="management" data-text="cli comandos terminal">
+        <span class="tag">Herramientas</span><h3>AWS CLI</h3>
+        <p class="def">Permite acceder y administrar servicios de AWS mediante comandos o scripts.</p>
+        <p class="compare"><strong>Comparación:</strong> Como controlar AWS desde una terminal o CMD.</p>
+      </article>
+      <article class="card" data-cat="management" data-text="sdk desarrollo codigo python java">
+        <span class="tag">Herramientas</span><h3>SDK</h3>
+        <p class="def">Permite acceder a servicios de AWS directamente desde código.</p>
+        <p class="compare"><strong>Comparación:</strong> Como usar Python o Java para controlar servicios de AWS desde un programa.</p>
+      </article>
+    </section>
   </section>
 
-  <h2 class="section-title">Servicios y conceptos</h2>
-  <section id="cards" class="grid">
+  <!-- ==================== MÓDULO 2 ==================== -->
+  <section id="mod2" class="module-block">
+    <h2 class="section-title">📗 Módulo 2 — Costos, AWS Organizations y soporte</h2>
 
-    <article class="card" data-cat="compute" data-text="ec2 elastic compute cloud servidor instancia">
-      <span class="tag">Cómputo</span><h3>Amazon EC2</h3>
-      <p class="def">Servicio que permite utilizar servidores virtuales en la nube.</p>
-      <p class="compare"><strong>Comparación:</strong> Como tener un servidor propio, pero virtual y en la nube.</p>
-    </article>
+    <h3 class="section-subtitle">💰 Modelo de precios de AWS</h3>
+    <section class="price-grid">
+      <article class="price-card" data-cat="cost" data-text="informatica computo modelo precios hora segundo linux instancia">
+        <span class="tag m2">Módulo 2 · Costos</span><h3>Informática</h3>
+        <ul><li>Se cobra por hora o segundo.</li><li>Varía según el tipo de instancia.</li><li>La diapositiva señala esta modalidad para Linux.</li></ul>
+        <p class="compare"><strong>Idea rápida:</strong> Pagas por el tiempo de uso del recurso de cómputo.</p>
+      </article>
+      <article class="price-card" data-cat="cost storage" data-text="almacenamiento gb costos precio por gb s3 ebs efs">
+        <span class="tag m2">Módulo 2 · Costos</span><h3>Almacenamiento</h3>
+        <ul><li>Normalmente se cobra por GB.</li><li>El precio puede variar según el servicio y el volumen utilizado.</li></ul>
+        <p class="compare"><strong>Idea rápida:</strong> Pagas principalmente por la cantidad de almacenamiento utilizado.</p>
+      </article>
+      <article class="price-card" data-cat="cost" data-text="transferencia datos salida entrada gb transferencia de datos">
+        <span class="tag m2">Módulo 2 · Costos</span><h3>Transferencia de datos</h3>
+        <ul><li>Los datos de salida se suman y se cobran.</li><li>Los datos de entrada son sin cargo, con algunas excepciones.</li><li>Normalmente se cobra por GB.</li></ul>
+        <p class="compare"><strong>Idea rápida:</strong> El movimiento de datos, especialmente la salida, puede generar costos.</p>
+      </article>
+    </section>
 
-    <article class="card" data-cat="compute" data-text="lambda código serverless">
-      <span class="tag">Cómputo</span><h3>AWS Lambda</h3>
-      <p class="def">Permite ejecutar código sin administrar directamente los servidores.</p>
-      <p class="compare"><strong>Comparación:</strong> Como ejecutar una tarea automáticamente sin preocuparte por el servidor.</p>
-    </article>
+    <h3 class="section-subtitle">📉 Descuentos y servicios sin cargo</h3>
+    <section class="grid">
+      <article class="card" data-cat="cost" data-text="descuentos volumen precios niveles ahorrar mas uso s3 ebs efs">
+        <span class="tag m2">Costos</span><h3>Descuentos basados en el volumen</h3>
+        <p class="def">AWS puede ofrecer precios por niveles: a medida que aumenta el uso, el precio por GB puede disminuir en servicios como S3, EBS y EFS.</p>
+        <p class="compare"><strong>Comparación:</strong> Como comprar más y obtener un precio menor por unidad.</p>
+      </article>
+      <article class="card" data-cat="cost" data-text="servicios sin cargo vpc elastic beanstalk auto scaling cloudformation iam">
+        <span class="tag m2">Costos</span><h3>Servicios sin cargo</h3>
+        <p class="def">La diapositiva incluye Amazon VPC, Elastic Beanstalk, Auto Scaling, AWS CloudFormation e IAM entre los servicios sin cargo.</p>
+        <p class="compare"><strong>Importante:</strong> Que el servicio aparezca sin cargo no significa que todos los recursos utilizados junto con él sean gratuitos.</p>
+      </article>
+    </section>
 
-    <article class="card" data-cat="compute" data-text="elastic beanstalk aplicaciones">
-      <span class="tag">Cómputo</span><h3>AWS Elastic Beanstalk</h3>
-      <p class="def">Facilita implementar y administrar aplicaciones en AWS.</p>
-      <p class="compare"><strong>Comparación:</strong> Como subir una aplicación y dejar que AWS gestione gran parte de la configuración.</p>
-    </article>
+    <h3 class="section-subtitle">🏢 Infraestructura tradicional vs. nube de AWS</h3>
+    <section class="grid">
+      <article class="card" data-cat="management cost" data-text="infraestructura tradicional nube aws gastos iniciales pago uso comercializacion agilidad escala autoservicio">
+        <span class="tag m2">Módulo 2</span><h3>Nube de AWS</h3>
+        <p class="def">El material contrasta la infraestructura tradicional, que requiere equipos, recursos, administración, contratos y costos, con la nube de AWS.</p>
+        <p class="compare"><strong>Características mostradas:</strong> Sin gastos iniciales, pagar por lo que se utilice, mejorar el plazo de comercialización, ganar agilidad, escalar bajo demanda e infraestructura de autoservicio.</p>
+      </article>
+    </section>
 
-    <article class="card" data-cat="compute" data-text="ecs contenedores">
-      <span class="tag">Cómputo</span><h3>Amazon ECS</h3>
-      <p class="def">Servicio para ejecutar y administrar contenedores.</p>
-      <p class="compare"><strong>Comparación:</strong> Como administrar aplicaciones empaquetadas en contenedores.</p>
-    </article>
+    <h3 class="section-subtitle">💵 Costo total de propiedad (TCO)</h3>
+    <section class="grid">
+      <article class="card" data-cat="cost" data-text="tco costo total propiedad costos directos indirectos sistema infraestructura carga trabajo migrar nube">
+        <span class="tag m2">Costos</span><h3>TCO — Costo total de propiedad</h3>
+        <p class="def">Es una estimación financiera que ayuda a identificar los costos directos e indirectos de un sistema.</p>
+        <p class="compare"><strong>¿Para qué sirve?</strong> Para comparar el costo de ejecutar una infraestructura completa o una carga de trabajo en instalaciones con el costo de hacerlo en AWS.</p>
+        <p class="complement"><strong>También:</strong> Se utiliza para presupuestar y desarrollar el caso de negocio para migrar a la nube.</p>
+      </article>
+    </section>
 
-    <article class="card" data-cat="compute" data-text="eks kubernetes">
-      <span class="tag">Cómputo</span><h3>Amazon EKS</h3>
-      <p class="def">Servicio administrado para ejecutar Kubernetes en AWS.</p>
-      <p class="compare"><strong>Comparación:</strong> Como usar Kubernetes sin administrar toda su infraestructura.</p>
-    </article>
+    <h3 class="section-subtitle">🛠️ Herramientas de costos</h3>
+    <section class="grid">
+      <article class="card" data-cat="cost management" data-text="presupuestos aws budgets presupuestos de aws">
+        <span class="tag m2">Costos</span><h3>Presupuestos de AWS</h3>
+        <p class="def">Herramienta mostrada para trabajar con presupuestos de AWS y controlar el uso o gasto planeado.</p>
+        <p class="compare"><strong>Comparación:</strong> Como establecer un presupuesto para saber si tus gastos se mantienen dentro de un límite.</p>
+      </article>
+      <article class="card" data-cat="cost management" data-text="informes uso costo aws cost usage reports">
+        <span class="tag m2">Costos</span><h3>Informes de uso y costo de AWS</h3>
+        <p class="def">Herramientas o informes utilizados para consultar información relacionada con el uso y los costos de AWS.</p>
+        <p class="compare"><strong>Comparación:</strong> Como un reporte detallado de cuánto utilizaste y cuánto gastaste.</p>
+      </article>
+      <article class="card" data-cat="cost management" data-text="cost explorer costos uso aws">
+        <span class="tag m2">Costos</span><h3>AWS Cost Explorer</h3>
+        <p class="def">Herramienta para analizar los costos y el uso de AWS.</p>
+        <p class="compare"><strong>Comparación:</strong> Como revisar tus gastos mediante gráficos y datos de consumo.</p>
+      </article>
+    </section>
 
-    <article class="card" data-cat="compute" data-text="fargate contenedores">
-      <span class="tag">Cómputo</span><h3>AWS Fargate</h3>
-      <p class="def">Permite ejecutar contenedores sin administrar los servidores.</p>
-      <p class="compare"><strong>Comparación:</strong> Como usar contenedores sin preocuparte por el servidor.</p>
-    </article>
+    <h3 class="section-subtitle">🏢 AWS Organizations</h3>
+    <section class="grid">
+      <article class="card" data-cat="management security" data-text="aws organizations organizacion cuentas ou unidad organizativa raiz root politica administracion">
+        <span class="tag m2">Administración</span><h3>AWS Organizations</h3>
+        <p class="def">Servicio para organizar y administrar varias cuentas de AWS mediante una estructura jerárquica.</p>
+        <p class="compare"><strong>Comparación:</strong> Como una empresa con una cuenta principal, departamentos y cuentas separadas.</p>
+      </article>
+      <article class="card" data-cat="management" data-text="root raiz aws organizations">
+        <span class="tag m2">Organizations</span><h3>Raíz (Root)</h3>
+        <p class="def">Es el nivel superior de la estructura de una organización en AWS.</p>
+        <p class="compare"><strong>Comparación:</strong> Como la parte superior de un árbol organizacional.</p>
+      </article>
+      <article class="card" data-cat="management" data-text="ou organizational unit unidad organizativa">
+        <span class="tag m2">Organizations</span><h3>Unidad organizativa (OU)</h3>
+        <p class="def">Grupo dentro de AWS Organizations utilizado para organizar cuentas de AWS.</p>
+        <p class="compare"><strong>Comparación:</strong> Como un departamento que reúne varias cuentas.</p>
+      </article>
+      <article class="card" data-cat="management" data-text="cuenta aws organizations account">
+        <span class="tag m2">Organizations</span><h3>Cuenta de AWS</h3>
+        <p class="def">Cuenta que puede formar parte de una organización y ubicarse dentro de una unidad organizativa.</p>
+        <p class="compare"><strong>Comparación:</strong> Como una sucursal que pertenece a una organización mayor.</p>
+      </article>
+      <article class="card" data-cat="management security" data-text="politicas policies organizations administracion cuentas">
+        <span class="tag m2">Organizations</span><h3>Políticas</h3>
+        <p class="def">Reglas que pueden utilizarse para controlar la administración y las restricciones de servicios en las cuentas de una organización.</p>
+        <p class="compare"><strong>Comparación:</strong> Como reglas que se aplican a uno o varios departamentos o cuentas.</p>
+      </article>
+    </section>
 
-    <article class="card" data-cat="compute" data-text="outposts infraestructura local">
-      <span class="tag">Cómputo</span><h3>AWS Outposts</h3>
-      <p class="def">Lleva infraestructura y servicios de AWS a instalaciones locales.</p>
-      <p class="compare"><strong>Comparación:</strong> Como tener parte de AWS dentro de tu propia empresa.</p>
-    </article>
+    <h3 class="section-subtitle">✨ Características y beneficios de AWS Organizations</h3>
+    <section class="grid">
+      <article class="card" data-cat="management" data-text="administracion cuentas basada politicas organizations">
+        <span class="tag m2">Organizations</span><h3>Administración basada en políticas</h3>
+        <p class="def">Permite administrar cuentas utilizando políticas.</p>
+        <p class="compare"><strong>Idea rápida:</strong> Las reglas ayudan a controlar cómo se administran las cuentas.</p>
+      </article>
+      <article class="card" data-cat="management" data-text="administracion cuentas basada grupos organizations">
+        <span class="tag m2">Organizations</span><h3>Administración basada en grupos</h3>
+        <p class="def">Las cuentas pueden organizarse en grupos o unidades organizativas.</p>
+        <p class="compare"><strong>Idea rápida:</strong> Agrupar cuentas facilita administrarlas.</p>
+      </article>
+      <article class="card" data-cat="management" data-text="api automatizar administracion cuentas organizations interfaz programacion">
+        <span class="tag m2">Organizations</span><h3>API</h3>
+        <p class="def">Las interfaces de programación de aplicaciones permiten automatizar la administración de cuentas.</p>
+        <p class="compare"><strong>Comparación:</strong> Como darle instrucciones a AWS desde un programa en lugar de hacerlo manualmente.</p>
+      </article>
+      <article class="card" data-cat="cost management" data-text="facturacion unificada organizations billing">
+        <span class="tag m2">Organizations</span><h3>Facturación unificada</h3>
+        <p class="def">Permite manejar la facturación de las cuentas de la organización de forma unificada.</p>
+        <p class="compare"><strong>Comparación:</strong> Como recibir y administrar una sola facturación para varias cuentas.</p>
+      </article>
+    </section>
 
-    <article class="card" data-cat="compute" data-text="lightsail servidor sencillo">
-      <span class="tag">Cómputo</span><h3>Amazon Lightsail</h3>
-      <p class="def">Servicio simplificado para crear recursos y aplicaciones.</p>
-      <p class="compare"><strong>Comparación:</strong> Como una forma sencilla de montar un servidor.</p>
-    </article>
+    <h3 class="section-subtitle">🪜 Pasos de AWS Organizations</h3>
+    <section class="steps">
+      <article class="step" data-cat="management" data-text="paso 1 crear organizacion organizations"><b>Paso 1</b>Crear una organización</article>
+      <article class="step" data-cat="management" data-text="paso 2 crear unidades organizativas ou"><b>Paso 2</b>Crear unidades organizativas</article>
+      <article class="step" data-cat="management security" data-text="paso 3 crear politicas control servicios"><b>Paso 3</b>Crear políticas de control de servicios</article>
+      <article class="step" data-cat="management security" data-text="paso 4 prueba restricciones"><b>Paso 4</b>Realizar la prueba de restricciones</article>
+    </section>
 
-    <article class="card" data-cat="storage" data-text="s3 almacenamiento archivos objetos">
-      <span class="tag">Almacenamiento</span><h3>Amazon S3</h3>
-      <p class="def">Servicio para almacenar archivos y objetos en la nube.</p>
-      <p class="compare"><strong>Comparación:</strong> Como un disco duro gigante en Internet.</p>
-    </article>
+    <h3 class="section-subtitle">🖥️ Acceso a AWS Organizations</h3>
+    <section class="grid">
+      <article class="card" data-cat="management" data-text="consola administracion aws organizations acceso">
+        <span class="tag m2">Acceso</span><h3>Consola de administración de AWS</h3>
+        <p class="def">Permite acceder y administrar AWS Organizations mediante una interfaz gráfica.</p>
+        <p class="compare"><strong>Comparación:</strong> Administración con ventanas, menús y botones.</p>
+      </article>
+      <article class="card" data-cat="management" data-text="aws cli organizations linea comandos">
+        <span class="tag m2">Acceso</span><h3>AWS CLI</h3>
+        <p class="def">Permite utilizar herramientas de línea de comandos para trabajar con AWS Organizations.</p>
+        <p class="compare"><strong>Comparación:</strong> Administración desde una terminal mediante comandos.</p>
+      </article>
+      <article class="card" data-cat="management" data-text="sdk organizations kits desarrollo software">
+        <span class="tag m2">Acceso</span><h3>SDK</h3>
+        <p class="def">Los kits de desarrollo de software permiten trabajar con AWS desde código.</p>
+        <p class="compare"><strong>Comparación:</strong> Como integrar la administración de AWS en un programa.</p>
+      </article>
+      <article class="card" data-cat="management" data-text="api https organizations consultas">
+        <span class="tag m2">Acceso</span><h3>API de consultas HTTPS</h3>
+        <p class="def">Permite realizar consultas mediante interfaces de programación de aplicaciones sobre HTTPS.</p>
+        <p class="compare"><strong>Comparación:</strong> Como comunicarse directamente con AWS mediante solicitudes web.</p>
+      </article>
+    </section>
 
-    <article class="card" data-cat="storage" data-text="ebs almacenamiento bloques disco ec2">
-      <span class="tag">Almacenamiento</span><h3>Amazon EBS</h3>
-      <p class="def">Almacenamiento de bloques utilizado con instancias EC2.</p>
-      <p class="compare"><strong>Comparación:</strong> Como conectar un disco duro a tu servidor.</p>
-    </article>
+    <h3 class="section-subtitle">🆘 AWS Support</h3>
+    <section class="grid">
+      <article class="card" data-cat="support" data-text="aws support soporte planes experimentacion produccion negocios">
+        <span class="tag m2">Soporte</span><h3>AWS Support</h3>
+        <p class="def">Ofrece una combinación de herramientas y experiencia para brindar soporte a usuarios de AWS.</p>
+        <p class="compare"><strong>Se utiliza para:</strong> experimentación con AWS, uso de AWS en producción y uso crítico de AWS para negocios.</p>
+      </article>
+      <article class="card" data-cat="support" data-text="tam technical account manager director cuentas tecnicas orientacion proactiva">
+        <span class="tag m2">Soporte</span><h3>TAM — Director de cuentas técnicas</h3>
+        <p class="def">Forma parte de la orientación proactiva mostrada en AWS Support.</p>
+        <p class="compare"><strong>Idea rápida:</strong> Acompañamiento técnico proactivo para la cuenta.</p>
+      </article>
+      <article class="card" data-cat="support management" data-text="trusted advisor practicas recomendadas aws soporte">
+        <span class="tag m2">Soporte</span><h3>AWS Trusted Advisor</h3>
+        <p class="def">Se muestra como una herramienta para aplicar prácticas recomendadas.</p>
+        <p class="compare"><strong>Idea rápida:</strong> Como una revisión que ayuda a seguir buenas prácticas en AWS.</p>
+      </article>
+      <article class="card" data-cat="support" data-text="support concierge asistencia cuentas">
+        <span class="tag m2">Soporte</span><h3>AWS Support Concierge</h3>
+        <p class="def">Forma parte de la asistencia para cuentas mostrada en el material.</p>
+        <p class="compare"><strong>Idea rápida:</strong> Asistencia enfocada en la cuenta.</p>
+      </article>
+    </section>
 
-    <article class="card" data-cat="storage" data-text="efs sistema archivos compartido">
-      <span class="tag">Almacenamiento</span><h3>Amazon EFS</h3>
-      <p class="def">Sistema de archivos que puede compartirse entre recursos.</p>
-      <p class="compare"><strong>Comparación:</strong> Como una carpeta de red compartida.</p>
-    </article>
+    <h3 class="section-subtitle">📋 Planes de AWS Support</h3>
+    <section class="grid">
+      <article class="card" data-cat="support" data-text="basic support plan basico centro recursos estado servicio preguntas frecuentes foros comprobaciones estado">
+        <span class="tag m2">Soporte</span><h3>Basic Support</h3>
+        <p class="def">Incluye acceso al Centro de recursos, panel de estado del servicio, preguntas frecuentes sobre productos, foros de debate y soporte para comprobaciones de estado.</p>
+        <p class="compare"><strong>Casos:</strong> La tabla del material indica que no ofrece soporte para casos.</p>
+      </article>
+      <article class="card" data-cat="support" data-text="developer support desarrollador horario comercial desarrollo inicial aws">
+        <span class="tag m2">Soporte</span><h3>Developer Support</h3>
+        <p class="def">Plan de soporte para el desarrollo inicial en AWS.</p>
+        <p class="compare"><strong>Horario:</strong> La diapositiva lo presenta como un plan de horario comercial.</p>
+      </article>
+      <article class="card" data-cat="support" data-text="business support produccion cargas trabajo 24 horas 7 dias">
+        <span class="tag m2">Soporte</span><h3>Business Support</h3>
+        <p class="def">Plan para clientes que ejecutan cargas de trabajo de producción.</p>
+        <p class="compare"><strong>Disponibilidad:</strong> 24 horas al día, 7 días a la semana, según el material.</p>
+      </article>
+      <article class="card" data-cat="support" data-text="enterprise support cargas criticas negocios 24 horas 7 dias">
+        <span class="tag m2">Soporte</span><h3>Enterprise Support</h3>
+        <p class="def">Plan para clientes que ejecutan cargas de trabajo críticas para los negocios.</p>
+        <p class="compare"><strong>Disponibilidad:</strong> 24 horas al día, 7 días a la semana, según el material.</p>
+      </article>
+    </section>
 
-    <article class="card" data-cat="storage" data-text="glacier almacenamiento archivo">
-      <span class="tag">Almacenamiento</span><h3>Amazon S3 Glacier</h3>
-      <p class="def">Servicio de almacenamiento incluido en la categoría de almacenamiento de AWS.</p>
-      <p class="compare"><strong>Comparación:</strong> Como un archivo de almacenamiento para conservar información.</p>
-    </article>
-
-    <article class="card" data-cat="database" data-text="rds base datos relacional">
-      <span class="tag">Base de datos</span><h3>Amazon RDS</h3>
-      <p class="def">Servicio para crear y administrar bases de datos relacionales.</p>
-      <p class="compare"><strong>Comparación:</strong> Como tener un servidor de base de datos administrado por AWS.</p>
-    </article>
-
-    <article class="card" data-cat="database" data-text="dynamodb base datos nosql">
-      <span class="tag">Base de datos</span><h3>Amazon DynamoDB</h3>
-      <p class="def">Servicio de base de datos incluido entre los servicios de bases de datos de AWS.</p>
-      <p class="compare"><strong>Comparación:</strong> Como una base de datos administrada en la nube.</p>
-    </article>
-
-    <article class="card" data-cat="database" data-text="redshift base datos">
-      <span class="tag">Base de datos</span><h3>Amazon Redshift</h3>
-      <p class="def">Servicio incluido en la categoría de bases de datos de AWS.</p>
-      <p class="compare"><strong>Comparación:</strong> Como una plataforma de datos administrada en la nube.</p>
-    </article>
-
-    <article class="card" data-cat="database" data-text="aurora base datos">
-      <span class="tag">Base de datos</span><h3>Amazon Aurora</h3>
-      <p class="def">Servicio de base de datos incluido entre las opciones de AWS.</p>
-      <p class="compare"><strong>Comparación:</strong> Como una base de datos relacional administrada en la nube.</p>
-    </article>
-
-    <article class="card" data-cat="network" data-text="vpc red virtual">
-      <span class="tag">Redes</span><h3>Amazon VPC</h3>
-      <p class="def">Permite crear una red virtual para los recursos de AWS.</p>
-      <p class="compare"><strong>Comparación:</strong> Como crear tu propia red local, pero dentro de AWS.</p>
-    </article>
-
-    <article class="card" data-cat="network" data-text="route 53 dns">
-      <span class="tag">Redes</span><h3>Amazon Route 53</h3>
-      <p class="def">Servicio incluido en la categoría de redes y entrega de contenido.</p>
-      <p class="compare"><strong>Comparación:</strong> Como el sistema que ayuda a dirigir nombres de dominio hacia recursos.</p>
-    </article>
-
-    <article class="card" data-cat="network" data-text="cloudfront contenido cdn">
-      <span class="tag">Redes</span><h3>Amazon CloudFront</h3>
-      <p class="def">Servicio incluido en redes y entrega de contenido de AWS.</p>
-      <p class="compare"><strong>Comparación:</strong> Como una red que acerca el contenido a los usuarios.</p>
-    </article>
-
-    <article class="card" data-cat="network" data-text="load balancing balanceador tráfico">
-      <span class="tag">Redes</span><h3>Elastic Load Balancing</h3>
-      <p class="def">Distribuye el tráfico entre diferentes recursos.</p>
-      <p class="compare"><strong>Comparación:</strong> Como repartir clientes entre varios empleados para evitar sobrecargar a uno.</p>
-    </article>
-
-    <article class="card" data-cat="security" data-text="iam identidad permisos usuarios">
-      <span class="tag">Seguridad</span><h3>AWS IAM</h3>
-      <p class="def">Administra identidades, usuarios y permisos de acceso a recursos.</p>
-      <p class="compare"><strong>Comparación:</strong> Como las cuentas, contraseñas y permisos de una empresa.</p>
-    </article>
-
-    <article class="card" data-cat="security" data-text="security groups firewall">
-      <span class="tag">Seguridad</span><h3>Grupos de seguridad</h3>
-      <p class="def">Controlan el tráfico permitido hacia los recursos asociados.</p>
-      <p class="compare"><strong>Comparación:</strong> Como un firewall que decide qué conexiones pueden pasar.</p>
-    </article>
-
-    <article class="card" data-cat="security" data-text="acl red tráfico">
-      <span class="tag">Seguridad</span><h3>ACL de red</h3>
-      <p class="def">Controla el tráfico que puede entrar o salir de una red.</p>
-      <p class="compare"><strong>Comparación:</strong> Como un filtro de seguridad colocado en la entrada de una red.</p>
-    </article>
-
-    <article class="card" data-cat="security" data-text="shield seguridad">
-      <span class="tag">Seguridad</span><h3>AWS Shield</h3>
-      <p class="def">Servicio incluido en la categoría de seguridad, identidad y conformidad.</p>
-      <p class="compare"><strong>Comparación:</strong> Como una capa de protección para los recursos.</p>
-    </article>
-
-    <article class="card" data-cat="management" data-text="cloudwatch administración monitoreo">
-      <span class="tag">Administración</span><h3>AWS CloudWatch</h3>
-      <p class="def">Servicio incluido en administración y gobernanza para supervisar recursos y aplicaciones.</p>
-      <p class="compare"><strong>Comparación:</strong> Como un panel para vigilar cómo funcionan tus recursos.</p>
-    </article>
-
-    <article class="card" data-cat="management" data-text="cloudtrail auditoria">
-      <span class="tag">Administración</span><h3>AWS CloudTrail</h3>
-      <p class="def">Servicio incluido en administración y gobernanza para registrar actividades de AWS.</p>
-      <p class="compare"><strong>Comparación:</strong> Como un registro que permite saber qué acciones ocurrieron.</p>
-    </article>
-
-    <article class="card" data-cat="management" data-text="cost explorer costos">
-      <span class="tag">Administración de costos</span><h3>AWS Cost Explorer</h3>
-      <p class="def">Herramienta para analizar los costos y el uso de AWS.</p>
-      <p class="compare"><strong>Comparación:</strong> Como revisar los gastos de tu servicio en una gráfica.</p>
-    </article>
-
-    <article class="card" data-cat="management" data-text="consola administración aws">
-      <span class="tag">Herramientas</span><h3>Consola de administración de AWS</h3>
-      <p class="def">Interfaz gráfica para administrar los servicios de AWS.</p>
-      <p class="compare"><strong>Comparación:</strong> Como administrar AWS con ventanas y botones.</p>
-    </article>
-
-    <article class="card" data-cat="management" data-text="cli comandos terminal">
-      <span class="tag">Herramientas</span><h3>AWS CLI</h3>
-      <p class="def">Permite acceder y administrar servicios de AWS mediante comandos o scripts.</p>
-      <p class="compare"><strong>Comparación:</strong> Como controlar AWS desde una terminal o CMD.</p>
-    </article>
-
-    <article class="card" data-cat="management" data-text="sdk desarrollo codigo python java">
-      <span class="tag">Herramientas</span><h3>SDK</h3>
-      <p class="def">Permite acceder a servicios de AWS directamente desde código.</p>
-      <p class="compare"><strong>Comparación:</strong> Como usar Python o Java para controlar servicios de AWS desde un programa.</p>
-    </article>
-
+    <h3 class="section-subtitle">⏱️ Tiempos de respuesta de casos mostrados en el material</h3>
+    <div class="note" data-cat="support" data-text="tiempos respuesta critica urgente alta normal baja developer business enterprise">
+      <table class="support-table">
+        <thead><tr><th>Plan</th><th>Crítica</th><th>Urgente</th><th>Alta</th><th>Normal</th><th>Baja</th></tr></thead>
+        <tbody>
+          <tr><td>Basic</td><td colspan="5">Sin soporte para casos</td></tr>
+          <tr><td>Developer<br>(horario comercial)</td><td>—</td><td>—</td><td>—</td><td>12 h o menos</td><td>24 h o menos</td></tr>
+          <tr><td>Business<br>(24 h/día, 7 días/semana)</td><td>—</td><td>1 h o menos</td><td>4 h o menos</td><td>12 h o menos</td><td>24 h o menos</td></tr>
+          <tr><td>Enterprise<br>(24 h/día, 7 días/semana)</td><td>15 min o menos</td><td>1 h o menos</td><td>4 h o menos</td><td>12 h o menos</td><td>24 h o menos</td></tr>
+        </tbody>
+      </table>
+    </div>
   </section>
 
   <div id="empty" class="empty">No se encontró ningún concepto con esa búsqueda.</div>
-
-  <footer>
-    Glosario elaborado a partir de las diapositivas proporcionadas para el estudio de AWS.
-  </footer>
+  <footer>Glosario elaborado a partir de las diapositivas proporcionadas para los Módulos 1 y 2 de AWS Academy.</footer>
 </main>
 
 <script>
-const search = document.getElementById('search');
-const buttons = document.querySelectorAll('button[data-filter]');
-const cards = document.querySelectorAll('.card');
-const empty = document.getElementById('empty');
-let filter = 'all';
-
+const search=document.getElementById('search');
+const buttons=document.querySelectorAll('button[data-filter]');
+const cards=document.querySelectorAll('.card,.price-card,.step,.note');
+const empty=document.getElementById('empty');
+let filter='all';
 function update(){
-  const q = search.value.toLowerCase().trim();
-  let visible = 0;
+  const q=search.value.toLowerCase().trim();
+  let visible=0;
   cards.forEach(card=>{
-    const matchesFilter = filter === 'all' || card.dataset.cat === filter || card.dataset.cat === 'all';
-    const matchesSearch = !q || card.dataset.text.includes(q) || card.innerText.toLowerCase().includes(q);
-    const show = matchesFilter && matchesSearch;
-    card.style.display = show ? '' : 'none';
-    if(show) visible++;
+    const cats=(card.dataset.cat||'').split(/\s+/);
+    const text=(card.dataset.text||'')+' '+card.innerText;
+    const matchesFilter=filter==='all'||cats.includes(filter);
+    const matchesSearch=!q||text.toLowerCase().includes(q);
+    const show=matchesFilter&&matchesSearch;
+    card.style.display=show?'':'none';
+    if(show)visible++;
   });
-  empty.style.display = visible ? 'none' : 'block';
+  empty.style.display=visible?'none':'block';
 }
-search.addEventListener('input', update);
-buttons.forEach(btn=>{
-  btn.addEventListener('click',()=>{
-    buttons.forEach(b=>b.classList.remove('active'));
-    btn.classList.add('active');
-    filter = btn.dataset.filter;
-    update();
-  });
-});
+search.addEventListener('input',update);
+buttons.forEach(btn=>btn.addEventListener('click',()=>{
+  buttons.forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  filter=btn.dataset.filter;
+  update();
+}));
 </script>
 </body>
 </html>
