@@ -28,6 +28,7 @@ button:hover,button.active{background:#263f7a;color:#fff;border-color:#263f7a}
 [hidden]{display:none !important}
 .tag{display:inline-block;background:#eef2ff;color:#3049a5;border-radius:20px;padding:4px 9px;font-size:12px;font-weight:700;margin-bottom:9px}
 .tag.m2{background:#e7f8f6;color:#08766e}
+.tag.m3{background:#fff0e5;color:#a04b00}
 .card h3{margin:0 0 8px;font-size:20px}
 .def{margin:0 0 12px}
 .compare{margin:0;padding:11px 12px;background:#f7f8fc;border-left:4px solid #536dfe;border-radius:8px;font-size:14px}
@@ -57,7 +58,7 @@ footer{text-align:center;color:#69728a;font-size:13px;margin-top:35px}
 <body>
 <header>
   <h1>☁️ AWS — Glosario Unificado</h1>
-  <p>Módulos 1 y 2 · Definiciones rápidas, comparaciones y complementos para estudiar.</p>
+  <p>Módulos 1, 2 y 3 · Definiciones rápidas, comparaciones y complementos para estudiar.</p>
 </header>
 
 <main class="container">
@@ -78,6 +79,7 @@ footer{text-align:center;color:#69728a;font-size:13px;margin-top:35px}
     <button id="btnAll" onclick="cambiarModulo('all')">📚 Todos los módulos</button>
     <button id="btnMod1" onclick="cambiarModulo('1')">📘 Módulo 1</button>
     <button id="btnMod2" onclick="cambiarModulo('2')">📗 Módulo 2</button>
+    <button id="btnMod3" onclick="cambiarModulo('3')">📙 Módulo 3</button>
   </div>
 
   <div class="note">
@@ -493,6 +495,33 @@ footer{text-align:center;color:#69728a;font-size:13px;margin-top:35px}
       </article>
     </section>
 
+    <h3 class="section-subtitle">📌 Conceptos adicionales que pueden aparecer</h3>
+    <div class="note additional-note">
+      <strong>Importante:</strong> estos conceptos <b>no aparecen en las diapositivas que me proporcionaste</b>, pero están relacionados con el tema de precios de AWS y pueden aparecer en evaluaciones.
+    </div>
+    <section class="grid">
+      <article class="card" data-cat="cost" data-text="reserved instances instancias reservadas ec2 rds capacidad reservada">
+        <span class="tag m2">Adicional</span><h3>Reserved Instances</h3>
+        <p class="def">Opción de compra de capacidad para ciertos servicios como Amazon EC2 y Amazon RDS, con un compromiso de uso durante un periodo determinado.</p>
+        <p class="compare"><strong>Idea rápida:</strong> Se reserva capacidad para obtener un modelo de precio diferente al de uso bajo demanda.</p>
+      </article>
+      <article class="card" data-cat="cost" data-text="auri all upfront reserved instance pago completo adelantado">
+        <span class="tag m2">Adicional</span><h3>AURI — All Upfront</h3>
+        <p class="def">Se paga el costo completo de la instancia reservada por adelantado.</p>
+        <p class="compare"><strong>Idea rápida:</strong> Todo el pago al inicio.</p>
+      </article>
+      <article class="card" data-cat="cost" data-text="puri partial upfront reserved instance pago parcial adelantado">
+        <span class="tag m2">Adicional</span><h3>PURI — Partial Upfront</h3>
+        <p class="def">Se realiza un pago parcial por adelantado y el resto se paga según las condiciones de la reserva.</p>
+        <p class="compare"><strong>Idea rápida:</strong> Una parte al inicio y el resto después.</p>
+      </article>
+      <article class="card" data-cat="cost" data-text="nuri no upfront reserved instance sin pago adelantado">
+        <span class="tag m2">Adicional</span><h3>NURI — No Upfront</h3>
+        <p class="def">No requiere un pago inicial por adelantado para la instancia reservada.</p>
+        <p class="compare"><strong>Idea rápida:</strong> Sin pago inicial.</p>
+      </article>
+    </section>
+
     <h3 class="section-subtitle">⏱️ Tiempos de respuesta de casos mostrados en el material</h3>
     <div class="note" data-cat="support" data-text="tiempos respuesta critica urgente alta normal baja developer business enterprise">
       <table class="support-table">
@@ -507,20 +536,198 @@ footer{text-align:center;color:#69728a;font-size:13px;margin-top:35px}
     </div>
   </section>
 
+
+  <!-- ==================== MÓDULO 3 ==================== -->
+  <section id="mod3" class="module-block">
+    <h2 class="section-title">📙 Módulo 3 — Infraestructura y regiones de AWS</h2>
+
+    <h3 class="section-subtitle">Regiones de AWS</h3>
+    <section class="grid">
+      <article class="card" data-cat="management" data-text="region regiones aws zona geografica replicacion datos comunicacion red troncal backbone redundancia conectividad">
+        <span class="tag m3">Infraestructura</span><h3>Región de AWS</h3>
+        <p class="def">Una región de AWS es una zona geográfica donde AWS proporciona infraestructura y servicios.</p>
+        <p class="compare"><strong>Idea rápida:</strong> Es una ubicación geográfica que agrupa infraestructura de AWS.</p>
+      </article>
+      <article class="card" data-cat="network" data-text="replicacion datos entre regiones controlada usuario region">
+        <span class="tag m3">Regiones</span><h3>Replicación entre regiones</h3>
+        <p class="def">La replicación de datos entre regiones es controlada por el usuario.</p>
+        <p class="compare"><strong>Idea rápida:</strong> Tú decides si y cómo replicar los datos entre regiones.</p>
+      </article>
+      <article class="card" data-cat="network" data-text="comunicacion entre regiones infraestructura red troncal aws backbone">
+        <span class="tag m3">Regiones</span><h3>Comunicación entre regiones</h3>
+        <p class="def">La comunicación entre regiones utiliza la infraestructura de red troncal de AWS.</p>
+        <p class="compare"><strong>Idea rápida:</strong> Las regiones se comunican mediante la red troncal de AWS.</p>
+      </article>
+      <article class="card" data-cat="network" data-text="redundancia conectividad region aws zonas disponibilidad">
+        <span class="tag m3">Regiones</span><h3>Redundancia y conectividad</h3>
+        <p class="def">Cada región proporciona a la red niveles plenos de redundancia y conectividad.</p>
+        <p class="compare"><strong>Idea rápida:</strong> La región está diseñada para ofrecer conectividad y redundancia.</p>
+      </article>
+    </section>
+
+    <h3 class="section-subtitle">Selección de una región</h3>
+    <section class="grid">
+      <article class="card" data-cat="security" data-text="gobernanza datos requisitos legales seleccion region aws">
+        <span class="tag m3">Selección</span><h3>Gobernanza de datos y requisitos legales</h3>
+        <p class="def">La selección de una región debe considerar la gobernanza de los datos y los requisitos legales.</p>
+        <p class="compare"><strong>Idea rápida:</strong> Verifica dónde pueden almacenarse y procesarse los datos.</p>
+      </article>
+      <article class="card" data-cat="network" data-text="proximidad clientes latencia seleccion region aws">
+        <span class="tag m3">Selección</span><h3>Proximidad con los clientes</h3>
+        <p class="def">La cercanía de la región con los clientes puede influir en la latencia.</p>
+        <p class="compare"><strong>Idea rápida:</strong> Una región más cercana puede reducir la latencia.</p>
+      </article>
+      <article class="card" data-cat="management" data-text="servicios disponibles region seleccion aws">
+        <span class="tag m3">Selección</span><h3>Servicios disponibles</h3>
+        <p class="def">La región debe contar con los servicios necesarios para las aplicaciones y datos.</p>
+        <p class="compare"><strong>Idea rápida:</strong> No todos los servicios tienen que estar disponibles en todas las regiones.</p>
+      </article>
+      <article class="card" data-cat="cost" data-text="costos varian segun region seleccion aws precio">
+        <span class="tag m3">Selección</span><h3>Costos por región</h3>
+        <p class="def">Los costos pueden variar según la región seleccionada.</p>
+        <p class="compare"><strong>Idea rápida:</strong> La misma solución puede tener costos diferentes según la región.</p>
+      </article>
+    </section>
+
+    <h3 class="section-subtitle">Zonas de disponibilidad</h3>
+    <section class="grid">
+      <article class="card" data-cat="management" data-text="zona disponibilidad availability zone az particion aislada infraestructura aws">
+        <span class="tag m3">Infraestructura</span><h3>Zona de disponibilidad (Availability Zone)</h3>
+        <p class="def">Es una partición completamente aislada de la infraestructura de AWS dentro de una región.</p>
+        <p class="compare"><strong>Idea rápida:</strong> Es una zona aislada dentro de una región para ayudar a separar fallos.</p>
+      </article>
+      <article class="card" data-cat="management" data-text="centros datos discretos zona disponibilidad aislamiento errores">
+        <span class="tag m3">Zonas de disponibilidad</span><h3>Centros de datos discretos</h3>
+        <p class="def">Las zonas de disponibilidad constan de centros de datos discretos y están diseñadas para el aislamiento de errores.</p>
+        <p class="compare"><strong>Idea rápida:</strong> Separar centros ayuda a limitar el impacto de un error.</p>
+      </article>
+      <article class="card" data-cat="network" data-text="redes privadas alta velocidad zonas disponibilidad interconectan">
+        <span class="tag m3">Zonas de disponibilidad</span><h3>Interconexión de zonas</h3>
+        <p class="def">Las zonas de disponibilidad se interconectan con otras mediante redes privadas de alta velocidad.</p>
+        <p class="compare"><strong>Idea rápida:</strong> Las zonas están separadas, pero conectadas rápidamente.</p>
+      </article>
+      <article class="card" data-cat="management" data-text="replicar datos recursos zonas disponibilidad resiliencia aws recomienda">
+        <span class="tag m3">Resiliencia</span><h3>Replicación entre zonas</h3>
+        <p class="def">AWS recomienda replicar los datos y recursos entre las zonas de disponibilidad para obtener mayor resiliencia.</p>
+        <p class="compare"><strong>Idea rápida:</strong> Tener recursos en varias zonas ayuda frente a fallos.</p>
+      </article>
+    </section>
+
+    <h3 class="section-subtitle">Puntos de presencia</h3>
+    <section class="grid">
+      <article class="card" data-cat="network" data-text="puntos presencia edge locations ubicaciones borde caches borde regionales aws red global 187 176 11">
+        <span class="tag m3">Redes</span><h3>Puntos de presencia</h3>
+        <p class="def">AWS proporciona una red global de puntos de presencia. En el material se indican 187 ubicaciones: 176 ubicaciones de borde y 11 cachés de borde regionales.</p>
+        <p class="compare"><strong>Idea rápida:</strong> Son ubicaciones distribuidas que acercan contenido a los usuarios.</p>
+      </article>
+      <article class="card" data-cat="network" data-text="amazon cloudfront cdn entrega contenido latencia reducida puntos presencia">
+        <span class="tag m3">Redes</span><h3>Amazon CloudFront</h3>
+        <p class="def">Es una red de entrega de contenido (CDN) global que entrega contenido a los usuarios finales con latencia reducida.</p>
+        <p class="compare"><strong>Idea rápida:</strong> Acerca el contenido al usuario para reducir la latencia.</p>
+      </article>
+      <article class="card" data-cat="network" data-text="cache borde regional contenido acceso poco frecuente regional edge cache">
+        <span class="tag m3">Redes</span><h3>Cachés de borde regionales</h3>
+        <p class="def">Se utilizan para contenido con acceso poco frecuente.</p>
+        <p class="compare"><strong>Idea rápida:</strong> Son cachés intermedias para contenido que no se solicita constantemente.</p>
+      </article>
+    </section>
+
+    <h3 class="section-subtitle">Características de la infraestructura de AWS</h3>
+    <section class="grid">
+      <article class="card" data-cat="compute" data-text="elasticidad infraestructura elastica adaptacion dinamica capacidad">
+        <span class="tag m3">Infraestructura</span><h3>Elasticidad</h3>
+        <p class="def">La infraestructura elástica permite una adaptación dinámica de la capacidad.</p>
+        <p class="compare"><strong>Idea rápida:</strong> La capacidad puede adaptarse a las necesidades.</p>
+      </article>
+      <article class="card" data-cat="compute" data-text="escalabilidad infraestructura crecimiento capacidad aws">
+        <span class="tag m3">Infraestructura</span><h3>Escalabilidad</h3>
+        <p class="def">La infraestructura escalable se adapta para admitir crecimiento.</p>
+        <p class="compare"><strong>Idea rápida:</strong> Permite crecer cuando aumentan las necesidades.</p>
+      </article>
+      <article class="card" data-cat="management" data-text="tolerancia errores funcionamiento correcto presencia error redundancia componentes">
+        <span class="tag m3">Infraestructura</span><h3>Tolerancia a errores</h3>
+        <p class="def">Es la capacidad de mantener el funcionamiento correcto en presencia de un error, con redundancia integrada de los componentes.</p>
+        <p class="compare"><strong>Idea rápida:</strong> Un error no debería detener todo el funcionamiento.</p>
+      </article>
+      <article class="card" data-cat="management" data-text="alta disponibilidad rendimiento operativo inactividad minimizado intervencion humana">
+        <span class="tag m3">Infraestructura</span><h3>Alta disponibilidad</h3>
+        <p class="def">Busca un alto nivel de rendimiento operativo, minimizar el tiempo de inactividad y funcionar sin intervención humana.</p>
+        <p class="compare"><strong>Idea rápida:</strong> Mantener los servicios disponibles durante el mayor tiempo posible.</p>
+      </article>
+    </section>
+
+    <h3 class="section-subtitle">Servicios nuevos del Módulo 3</h3>
+    <section class="grid">
+      <article class="card" data-cat="network" data-text="aws transit gateway red conectar vpc redes transit gateway">
+        <span class="tag m3">Redes</span><h3>AWS Transit Gateway</h3>
+        <p class="def">Servicio de red mostrado en el material para la categoría de redes y entrega de contenido.</p>
+        <p class="compare"><strong>Idea rápida:</strong> Se utiliza para conectar redes dentro de AWS.</p>
+      </article>
+      <article class="card" data-cat="network" data-text="aws direct connect conexion directa red aws direct connect">
+        <span class="tag m3">Redes</span><h3>AWS Direct Connect</h3>
+        <p class="def">Servicio mostrado en el material dentro de la categoría de redes y entrega de contenido.</p>
+        <p class="compare"><strong>Idea rápida:</strong> Conecta una red con AWS mediante una conexión dedicada.</p>
+      </article>
+      <article class="card" data-cat="network" data-text="aws vpn red privada virtual virtual private network">
+        <span class="tag m3">Redes</span><h3>AWS VPN</h3>
+        <p class="def">Servicio mostrado en el material dentro de la categoría de redes y entrega de contenido.</p>
+        <p class="compare"><strong>Idea rápida:</strong> Permite establecer conexiones de red privadas mediante VPN.</p>
+      </article>
+      <article class="card" data-cat="security" data-text="amazon cognito identidad usuarios autenticacion seguridad">
+        <span class="tag m3">Seguridad</span><h3>Amazon Cognito</h3>
+        <p class="def">Servicio mostrado en la categoría de seguridad, identidad y conformidad de AWS.</p>
+        <p class="compare"><strong>Idea rápida:</strong> Está relacionado con la identidad de usuarios.</p>
+      </article>
+      <article class="card" data-cat="security" data-text="aws key management service kms claves cifrado seguridad">
+        <span class="tag m3">Seguridad</span><h3>AWS Key Management Service (KMS)</h3>
+        <p class="def">Servicio mostrado en la categoría de seguridad, identidad y conformidad de AWS.</p>
+        <p class="compare"><strong>Idea rápida:</strong> Está relacionado con la administración de claves.</p>
+      </article>
+      <article class="card" data-cat="security" data-text="aws artifact cumplimiento conformidad documentos">
+        <span class="tag m3">Seguridad</span><h3>AWS Artifact</h3>
+        <p class="def">Servicio mostrado en la categoría de seguridad, identidad y conformidad de AWS.</p>
+        <p class="compare"><strong>Idea rápida:</strong> Está relacionado con información y documentación de conformidad.</p>
+      </article>
+      <article class="card" data-cat="management" data-text="aws config configuracion recursos administracion gobernanza">
+        <span class="tag m3">Administración</span><h3>AWS Config</h3>
+        <p class="def">Servicio mostrado en la categoría de administración y gobernanza de AWS.</p>
+        <p class="compare"><strong>Idea rápida:</strong> Está relacionado con la configuración de los recursos.</p>
+      </article>
+      <article class="card" data-cat="management compute" data-text="aws auto scaling escalado automatico capacidad administracion gobernanza">
+        <span class="tag m3">Administración</span><h3>AWS Auto Scaling</h3>
+        <p class="def">Servicio mostrado en la categoría de administración y gobernanza de AWS.</p>
+        <p class="compare"><strong>Idea rápida:</strong> Ayuda a ajustar la capacidad de los recursos.</p>
+      </article>
+      <article class="card" data-cat="management" data-text="aws cli interfaz linea comandos aws command line interface">
+        <span class="tag m3">Administración</span><h3>Interfaz de línea de comandos de AWS (AWS CLI)</h3>
+        <p class="def">Herramienta de línea de comandos mostrada en la categoría de administración y gobernanza.</p>
+        <p class="compare"><strong>Idea rápida:</strong> Permite administrar AWS mediante comandos.</p>
+      </article>
+      <article class="card" data-cat="management" data-text="aws well architected tool well architected herramienta arquitectura buenas practicas">
+        <span class="tag m3">Administración</span><h3>AWS Well-Architected Tool</h3>
+        <p class="def">Herramienta mostrada en la categoría de administración y gobernanza de AWS.</p>
+        <p class="compare"><strong>Idea rápida:</strong> Ayuda a revisar la arquitectura de una carga de trabajo.</p>
+      </article>
+    </section>
+  </section>
+
   <div id="empty" class="empty">No se encontró ningún concepto con esa búsqueda.</div>
-  <footer>Glosario elaborado a partir de las diapositivas proporcionadas para los Módulos 1 y 2 de AWS Academy.</footer>
+  <footer>Glosario elaborado a partir de las diapositivas proporcionadas para los Módulos 1, 2 y 3 de AWS Academy.</footer>
 </main>
 
 <script>
 const search=document.getElementById('search');
 const buttons=document.querySelectorAll('button[data-filter]');
-const cards=document.querySelectorAll('.card,.price-card,.step,.note');
+const allItems=document.querySelectorAll('.card,.price-card,.step,.note[data-text]');
 const empty=document.getElementById('empty');
 const mod1=document.getElementById('mod1');
 const mod2=document.getElementById('mod2');
+const mod3=document.getElementById('mod3');
 const btnAll=document.getElementById('btnAll');
 const btnMod1=document.getElementById('btnMod1');
 const btnMod2=document.getElementById('btnMod2');
+const btnMod3=document.getElementById('btnMod3');
+const topNote=document.querySelector('.container > .note');
 let filter='all';
 
 function cambiarModulo(modulo){
@@ -533,40 +740,79 @@ function cambiarModulo(modulo){
 
 function aplicarModulo(){
   const modulo=new URLSearchParams(window.location.search).get('mod');
+  mod1.hidden=modulo==='2'||modulo==='3';
+  mod2.hidden=modulo==='1'||modulo==='3';
+  mod3.hidden=modulo==='1'||modulo==='2';
 
-  // Ocultar/mostrar el módulo completo. Sus títulos y todo su contenido
-  // permanecen juntos, por lo que no desaparecen las secciones internas.
-  mod1.hidden=(modulo==='2');
-  mod2.hidden=(modulo==='1');
-
-  [btnAll,btnMod1,btnMod2].forEach(b=>b.classList.remove('active'));
+  [btnAll,btnMod1,btnMod2,btnMod3].forEach(b=>b.classList.remove('active'));
   if(modulo==='1') btnMod1.classList.add('active');
   else if(modulo==='2') btnMod2.classList.add('active');
+  else if(modulo==='3') btnMod3.classList.add('active');
   else btnAll.classList.add('active');
 
   window.scrollTo(0,0);
 }
 
+function normalizar(texto){
+  return texto.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'');
+}
+
+function actualizarSecciones(){
+  document.querySelectorAll('.module-block').forEach(modulo=>{
+    if(modulo.hidden) return;
+    const headings=[...modulo.querySelectorAll(':scope > .section-subtitle')];
+    headings.forEach(heading=>{
+      let sibling=heading.nextElementSibling;
+      const group=[];
+      while(sibling && !sibling.classList.contains('section-subtitle')){
+        group.push(sibling);
+        sibling=sibling.nextElementSibling;
+      }
+      const hasVisible=group.some(el=>{
+        if(el.matches('.grid,.steps')) return [...el.querySelectorAll('.card,.step')].some(x=>!x.hidden);
+        if(el.classList.contains('note')) return !el.hidden;
+        return [...el.querySelectorAll('.card,.step')].some(x=>!x.hidden);
+      });
+      const hide=!!search.value.trim() && !hasVisible;
+      heading.hidden=hide;
+      group.forEach(el=>{
+        if(!el.matches('.grid,.steps,.note')) return;
+        // Ocultar contenedores de sección completamente vacíos durante la búsqueda.
+        if(el.matches('.grid,.steps')){
+          const items=[...el.querySelectorAll('.card,.step')];
+          el.hidden=!!search.value.trim() && items.length>0 && items.every(x=>x.hidden);
+        }
+        if(el.classList.contains('note') && el.dataset.text){
+          // Su visibilidad ya se controla en update().
+        }
+      });
+    });
+  });
+}
+
 function update(){
-  const q=search.value.toLowerCase().trim();
+  const q=normalizar(search.value.trim());
   let visible=0;
 
-  cards.forEach(card=>{
-    const modulo=card.closest('#mod1, #mod2');
+  allItems.forEach(item=>{
+    const modulo=item.closest('.module-block');
     if(!modulo || modulo.hidden){
-      card.hidden=true;
+      item.hidden=true;
       return;
     }
-
-    const cats=(card.dataset.cat||'').split(/\s+/);
-    const text=(card.dataset.text||'')+' '+card.innerText;
+    const cats=(item.dataset.cat||'').split(/\s+/).filter(Boolean);
+    const text=normalizar((item.dataset.text||'')+' '+item.innerText);
     const matchesFilter=filter==='all'||cats.includes(filter);
-    const matchesSearch=!q||text.toLowerCase().includes(q);
+    const matchesSearch=!q||text.includes(q);
     const show=matchesFilter&&matchesSearch;
-    card.hidden=!show;
+    item.hidden=!show;
     if(show) visible++;
   });
 
+  // Ocultar la nota general mientras se busca para dejar solo resultados.
+  if(topNote) topNote.hidden=!!q;
+
+  actualizarSecciones();
   empty.hidden=visible!==0;
 }
 
