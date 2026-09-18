@@ -25,6 +25,7 @@ button:hover,button.active{background:#263f7a;color:#fff;border-color:#263f7a}
 .card{background:#fff;border:1px solid #e0e4ef;border-radius:16px;padding:20px;box-shadow:0 5px 18px #18254b0b;transition:.18s}
 .card:hover{transform:translateY(-3px);box-shadow:0 10px 25px #18254b18}
 .card.hidden{display:none}
+[hidden]{display:none !important}
 .tag{display:inline-block;background:#eef2ff;color:#3049a5;border-radius:20px;padding:4px 9px;font-size:12px;font-weight:700;margin-bottom:9px}
 .tag.m2{background:#e7f8f6;color:#08766e}
 .card h3{margin:0 0 8px;font-size:20px}
@@ -74,8 +75,9 @@ footer{text-align:center;color:#69728a;font-size:13px;margin-top:35px}
   </div>
 
   <div class="module-nav">
-    <button onclick="document.getElementById('mod1').scrollIntoView()">📘 Módulo 1</button>
-    <button onclick="document.getElementById('mod2').scrollIntoView()">📗 Módulo 2</button>
+    <button id="btnAll" onclick="cambiarModulo('all')">📚 Todos los módulos</button>
+    <button id="btnMod1" onclick="cambiarModulo('1')">📘 Módulo 1</button>
+    <button id="btnMod2" onclick="cambiarModulo('2')">📗 Módulo 2</button>
   </div>
 
   <div class="note">
@@ -514,21 +516,60 @@ const search=document.getElementById('search');
 const buttons=document.querySelectorAll('button[data-filter]');
 const cards=document.querySelectorAll('.card,.price-card,.step,.note');
 const empty=document.getElementById('empty');
+const mod1=document.getElementById('mod1');
+const mod2=document.getElementById('mod2');
+const btnAll=document.getElementById('btnAll');
+const btnMod1=document.getElementById('btnMod1');
+const btnMod2=document.getElementById('btnMod2');
 let filter='all';
+
+function cambiarModulo(modulo){
+  const url=new URL(window.location.href);
+  if(modulo==='all') url.searchParams.delete('mod');
+  else url.searchParams.set('mod',modulo);
+  url.hash='';
+  window.location.href=url.toString();
+}
+
+function aplicarModulo(){
+  const modulo=new URLSearchParams(window.location.search).get('mod');
+
+  // Ocultar/mostrar el módulo completo. Sus títulos y todo su contenido
+  // permanecen juntos, por lo que no desaparecen las secciones internas.
+  mod1.hidden=(modulo==='2');
+  mod2.hidden=(modulo==='1');
+
+  [btnAll,btnMod1,btnMod2].forEach(b=>b.classList.remove('active'));
+  if(modulo==='1') btnMod1.classList.add('active');
+  else if(modulo==='2') btnMod2.classList.add('active');
+  else btnAll.classList.add('active');
+
+  window.scrollTo(0,0);
+}
+
 function update(){
   const q=search.value.toLowerCase().trim();
   let visible=0;
+
   cards.forEach(card=>{
+    const modulo=card.closest('#mod1, #mod2');
+    if(!modulo || modulo.hidden){
+      card.hidden=true;
+      return;
+    }
+
     const cats=(card.dataset.cat||'').split(/\s+/);
     const text=(card.dataset.text||'')+' '+card.innerText;
     const matchesFilter=filter==='all'||cats.includes(filter);
     const matchesSearch=!q||text.toLowerCase().includes(q);
     const show=matchesFilter&&matchesSearch;
-    card.style.display=show?'':'none';
-    if(show)visible++;
+    card.hidden=!show;
+    if(show) visible++;
   });
-  empty.style.display=visible?'none':'block';
+
+  empty.hidden=visible!==0;
 }
+
 search.addEventListener('input',update);
 buttons.forEach(btn=>btn.addEventListener('click',()=>{
   buttons.forEach(b=>b.classList.remove('active'));
@@ -536,6 +577,9 @@ buttons.forEach(btn=>btn.addEventListener('click',()=>{
   filter=btn.dataset.filter;
   update();
 }));
+
+aplicarModulo();
+update();
 </script>
 </body>
 </html>
