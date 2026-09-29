@@ -925,10 +925,18 @@ function cambiarModulo(modulo){
 
 function aplicarModulo(){
   const modulo=new URLSearchParams(window.location.search).get('mod');
-  mod1.hidden=modulo==='2'||modulo==='3';
-  mod2.hidden=modulo==='1'||modulo==='3';
-  mod3.hidden=modulo==='1'||modulo==='2'||modulo==='4';
-  mod4.hidden=modulo==='1'||modulo==='2'||modulo==='3';
+  const modulos={
+    '1':mod1,
+    '2':mod2,
+    '3':mod3,
+    '4':mod4
+  };
+
+  // Si se selecciona un módulo, mostrar SOLO ese módulo.
+  // Si no hay módulo seleccionado, mostrar todos.
+  Object.entries(modulos).forEach(([numero,elemento])=>{
+    elemento.hidden=!!modulo && modulo!==numero;
+  });
 
   [btnAll,btnMod1,btnMod2,btnMod3,btnMod4].forEach(b=>b.classList.remove('active'));
   if(modulo==='1') btnMod1.classList.add('active');
