@@ -82,6 +82,7 @@ footer{text-align:center;color:#69728a;font-size:13px;margin-top:35px}
     <button id="btnMod2" onclick="cambiarModulo('2')">📗 Módulo 2</button>
     <button id="btnMod3" onclick="cambiarModulo('3')">📙 Módulo 3</button>
     <button id="btnMod4" onclick="cambiarModulo('4')">📕 Módulo 4</button>
+    <button id="btnMod5" onclick="cambiarModulo('5')">📓 Módulo 5</button>
   </div>
 
   <div class="note">
@@ -894,8 +895,122 @@ footer{text-align:center;color:#69728a;font-size:13px;margin-top:35px}
     </section>
   </section>
 
+
+  <!-- ==================== MÓDULO 5 ==================== -->
+  <section id="mod5" class="module-block">
+    <h2 class="section-title">📓 Módulo 5 — Redes, VPC y entrega de contenido</h2>
+
+    <div class="note" data-text="modulo 5 redes vpc subredes seguridad route 53 cloudfront direccionamiento ip enrutamiento">
+      <strong>Contenido del Módulo 5:</strong> conceptos de redes de AWS, grupos de seguridad, ACL de red, Amazon Route 53, Amazon CloudFront, VPC, subredes, direccionamiento IP, interfaces de red, tablas de enrutamiento e interconexión de VPC.
+    </div>
+
+    <h3 class="section-subtitle">Seguridad de red</h3>
+    <section class="grid">
+      <article class="card" data-cat="security network" data-text="security groups grupos seguridad nivel instancia reglas entrada salida estado stateful trafico retorno">
+        <span class="tag m5">Seguridad</span><h3>Grupos de seguridad</h3>
+        <p class="def">Actúan en el nivel de la instancia y controlan el tráfico permitido mediante reglas.</p>
+        <p class="compare"><strong>Idea rápida:</strong> Funcionan como un filtro de tráfico asociado a una instancia.</p>
+      </article>
+      <article class="card" data-cat="security network" data-text="acl red network acl lista control acceso subnet subred entrada salida stateless estado sin estado reglas denegacion permiso">
+        <span class="tag m5">Seguridad</span><h3>ACL de red</h3>
+        <p class="def">Lista de control de acceso que funciona en el nivel de la subred.</p>
+        <p class="compare"><strong>Importante:</strong> cada subred de una VPC debe estar asociada a una ACL de red; las reglas de entrada y salida son independientes.</p>
+      </article>
+      <article class="card" data-cat="security network" data-text="comparacion grupos seguridad acl red instancia subred reglas permiso denegacion estado orden numerico trafico retorno">
+        <span class="tag m5">Comparación</span><h3>Security Groups vs. ACL de red</h3>
+        <p class="def">Los grupos de seguridad funcionan a nivel de instancia, mientras que las ACL de red funcionan a nivel de subred.</p>
+        <p class="compare"><strong>Diferencia:</strong> los grupos de seguridad solo tienen reglas de permiso y mantienen estado; las ACL permiten reglas de permiso y denegación y no mantienen estado.</p>
+      </article>
+    </section>
+
+    <h3 class="section-subtitle">Amazon Route 53</h3>
+    <section class="grid">
+      <article class="card" data-cat="network" data-text="route 53 dns dominio nombres dominio disponibilidad escalabilidad ipv4 ipv6 recursos flujo trafico">
+        <span class="tag m5">Redes</span><h3>Amazon Route 53</h3>
+        <p class="def">Servicio de DNS de alta disponibilidad y escalabilidad que permite registrar nombres de dominio y dirigir usuarios a recursos.</p>
+        <p class="compare"><strong>Idea rápida:</strong> Traduce nombres de dominio en direcciones y ayuda a dirigir el tráfico.</p>
+      </article>
+      <article class="card" data-cat="network" data-text="route 53 direccionamiento sencillo simple weighted ponderado latencia geolocation geoproximity failover conmutacion error respuesta multivalor">
+        <span class="tag m5">Route 53</span><h3>Tipos de direccionamiento de Route 53</h3>
+        <p class="def">Route 53 admite direccionamiento sencillo, de turno rotativo ponderado, basado en latencia, por geolocalización, por geoproximidad, tras conmutación por error y direccionamiento de respuesta multivalor.</p>
+        <p class="compare"><strong>Idea rápida:</strong> Permiten decidir cómo se dirige el tráfico según pesos, latencia, ubicación, errores o múltiples respuestas.</p>
+      </article>
+    </section>
+
+    <h3 class="section-subtitle">Amazon CloudFront</h3>
+    <section class="grid">
+      <article class="card" data-cat="network" data-text="cloudfront cdn contenido entrega global rapido seguro autoservicio pago uso">
+        <span class="tag m5">Redes</span><h3>Amazon CloudFront</h3>
+        <p class="def">Servicio de CDN rápido, mundial y seguro que entrega contenido mediante una red global de ubicaciones de borde y cachés de borde regionales.</p>
+        <p class="compare"><strong>Modelo:</strong> autoservicio y pago por uso.</p>
+      </article>
+      <article class="card" data-cat="network" data-text="cloudfront ubicaciones borde edge locations caches regionales contenido servidor origen geolocalizacion latencia">
+        <span class="tag m5">CloudFront</span><h3>Infraestructura de CloudFront</h3>
+        <p class="def">Utiliza ubicaciones de borde y cachés de borde regionales para entregar contenido a los clientes con rapidez.</p>
+        <p class="compare"><strong>Idea rápida:</strong> acerca el contenido a los usuarios para reducir la latencia.</p>
+      </article>
+    </section>
+
+    <h3 class="section-subtitle">Redes, VPC y subredes</h3>
+    <section class="grid">
+      <article class="card" data-cat="network" data-text="red subred subnet dividir logicamente red subredes enrutador">
+        <span class="tag m5">Redes</span><h3>Subred</h3>
+        <p class="def">División lógica de una red que permite organizar los recursos dentro de una VPC.</p>
+        <p class="compare"><strong>Idea rápida:</strong> una red puede dividirse lógicamente en varias subredes.</p>
+      </article>
+      <article class="card" data-cat="network" data-text="vpc subred aislada logicamente otras vpc cuenta aws disponibilidad publica privada zona disponibilidad">
+        <span class="tag m5">VPC</span><h3>VPC y subredes</h3>
+        <p class="def">Una VPC es una red virtual aislada lógicamente; sus subredes están dentro de la VPC y pertenecen a una única zona de disponibilidad.</p>
+        <p class="compare"><strong>Tipos:</strong> las subredes pueden clasificarse como públicas o privadas.</p>
+      </article>
+      <article class="card" data-cat="network" data-text="direccionamiento ip vpc cidr ipv4 bloque direcciones privadas /16 /28 ipv6 superponer">
+        <span class="tag m5">VPC</span><h3>Direccionamiento IP de una VPC</h3>
+        <p class="def">Al crear una VPC se asigna un bloque CIDR IPv4, que define el intervalo de direcciones IP privadas disponibles.</p>
+        <p class="compare"><strong>Material:</strong> el bloque CIDR IPv4 más grande mostrado es /16 y el más pequeño /28; también se admite IPv6.</p>
+      </article>
+      <article class="card" data-cat="network" data-text="ip publica ipv4 publica elastica elastic ip asignacion manual automatica asociada cuenta aws reasignar costo">
+        <span class="tag m5">VPC</span><h3>Dirección IP pública y elástica</h3>
+        <p class="def">La IP pública puede asignarse manual o automáticamente; una IP elástica está asociada a una cuenta de AWS y puede asignarse o reasignarse.</p>
+        <p class="compare"><strong>Diferencia:</strong> la IP elástica puede mantenerse y reasignarse según sea necesario, aunque puede implicar costos adicionales.</p>
+      </article>
+      <article class="card" data-cat="network" data-text="eni interfaz red elastica elastic network interface instancia asociar desasociar red atributos ip privada">
+        <span class="tag m5">VPC</span><h3>Interfaz de red elástica (ENI)</h3>
+        <p class="def">Interfaz de red virtual que puede asociarse a una instancia, desasociarse y volver a asociarse a otra instancia para redirigir tráfico.</p>
+        <p class="compare"><strong>Idea rápida:</strong> los atributos de la interfaz también se asocian cuando se vuelve a asociar a otra instancia.</p>
+      </article>
+    </section>
+
+    <h3 class="section-subtitle">Enrutamiento e interconexión</h3>
+    <section class="grid">
+      <article class="card" data-cat="network" data-text="tabla enrutamiento rutas route table reglas destino objetivo subred vpc local">
+        <span class="tag m5">Redes</span><h3>Tabla de enrutamiento</h3>
+        <p class="def">Conjunto de reglas, llamadas rutas, que permite configurar cómo se dirige el tráfico de red de una subred.</p>
+        <p class="compare"><strong>Importante:</strong> cada ruta especifica un destino y un objetivo; cada subred está asociada a una sola tabla de enrutamiento.</p>
+      </article>
+      <article class="card" data-cat="network" data-text="uso compartido vpc compartir subredes cuentas aws propietario participante cuenta">
+        <span class="tag m5">VPC</span><h3>Uso compartido de VPC</h3>
+        <p class="def">Permite compartir subredes de una VPC con otras cuentas de AWS.</p>
+        <p class="compare"><strong>Idea rápida:</strong> varios clientes o cuentas pueden utilizar subredes compartidas dentro de una VPC.</p>
+      </article>
+      <article class="card" data-cat="network" data-text="interconexion vpc vpc peering peering conectar cuentas regiones aws trafico privado bidireccional restricciones ip superponer transitiva recurso">
+        <span class="tag m5">VPC</span><h3>Interconexión de VPC</h3>
+        <p class="def">Permite conectar VPC dentro de una cuenta, entre cuentas de AWS o entre regiones para dirigir tráfico de forma privada.</p>
+        <p class="compare"><strong>Restricciones del material:</strong> los espacios IP no pueden superponerse, no se admite interconexión transitiva y solo puede existir un recurso de interconexión entre las mismas dos VPC.</p>
+      </article>
+    </section>
+
+    <h3 class="section-subtitle">Modelo OSI</h3>
+    <section class="grid">
+      <article class="card" data-cat="network" data-text="osi modelo interconexion sistemas abiertos capa 7 aplicacion 6 presentacion 5 sesion 4 transporte 3 red 2 enlace datos 1 fisica tcp udp ip mac http ftp dhcp ldap">
+        <span class="tag m5">Redes</span><h3>Modelo OSI</h3>
+        <p class="def">Modelo de siete capas que describe cómo viajan los datos a través de una red.</p>
+        <p class="compare"><strong>Capas:</strong> 7 Aplicación, 6 Presentación, 5 Sesión, 4 Transporte, 3 Red, 2 Enlace de datos y 1 Física.</p>
+      </article>
+    </section>
+  </section>
+
   <div id="empty" class="empty">No se encontró ningún concepto con esa búsqueda.</div>
-  <footer>Glosario elaborado a partir de las diapositivas proporcionadas para los Módulos 1, 2, 3 y 4 de AWS Academy.</footer>
+  <footer>Glosario elaborado a partir de las diapositivas proporcionadas para los Módulos 1, 2, 3, 4 y 5 de AWS Academy.</footer>
 </main>
 
 <script>
@@ -912,6 +1027,8 @@ const btnMod1=document.getElementById('btnMod1');
 const btnMod2=document.getElementById('btnMod2');
 const btnMod3=document.getElementById('btnMod3');
 const btnMod4=document.getElementById('btnMod4');
+const mod5=document.getElementById('mod5');
+const btnMod5=document.getElementById('btnMod5');
 const topNote=document.querySelector('.container > .note');
 let filter='all';
 
@@ -929,7 +1046,8 @@ function aplicarModulo(){
     '1':mod1,
     '2':mod2,
     '3':mod3,
-    '4':mod4
+    '4':mod4,
+    '5':mod5
   };
 
   // Si se selecciona un módulo, mostrar SOLO ese módulo.
@@ -943,6 +1061,7 @@ function aplicarModulo(){
   else if(modulo==='2') btnMod2.classList.add('active');
   else if(modulo==='3') btnMod3.classList.add('active');
   else if(modulo==='4') btnMod4.classList.add('active');
+  else if(modulo==='5') btnMod5.classList.add('active');
   else btnAll.classList.add('active');
 
   window.scrollTo(0,0);
