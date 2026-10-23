@@ -32,6 +32,7 @@ button:hover,button.active{background:#263f7a;color:#fff;border-color:#263f7a}
 .tag.m4{background:#f0eaff;color:#6840a8}
 .tag.m5{background:#e8f4ff;color:#145b86}
 .tag.m6{background:#fff0f3;color:#a12648}
+.tag.m7{background:#e9f7e8;color:#26733b}
 .card h3{margin:0 0 8px;font-size:20px}
 .def{margin:0 0 12px}
 .compare{margin:0;padding:11px 12px;background:#f7f8fc;border-left:4px solid #536dfe;border-radius:8px;font-size:14px}
@@ -61,7 +62,7 @@ footer{text-align:center;color:#69728a;font-size:13px;margin-top:35px}
 <body>
 <header>
   <h1>☁️ AWS — Glosario Unificado</h1>
-  <p>Módulos 1 al 6 · Definiciones rápidas, comparaciones y complementos para estudiar.</p>
+  <p>Módulos 1 al 7 · Definiciones rápidas, comparaciones y complementos para estudiar.</p>
 </header>
 
 <main class="container">
@@ -86,6 +87,7 @@ footer{text-align:center;color:#69728a;font-size:13px;margin-top:35px}
     <button id="btnMod4" onclick="cambiarModulo('4')">📕 Módulo 4</button>
     <button id="btnMod5" onclick="cambiarModulo('5')">📓 Módulo 5</button>
      <button id="btnMod6" onclick="cambiarModulo('6')">📔 Módulo 6</button>
+     <button id="btnMod7" onclick="cambiarModulo('7')">📒 Módulo 7</button>
   </div>
 
   <div class="note">
@@ -1264,8 +1266,58 @@ footer{text-align:center;color:#69728a;font-size:13px;margin-top:35px}
     </section>
   </section>
 
+
+<section id="mod7" class="module-block">
+<h2 class="section-title">📒 Módulo 7 — Almacenamiento en AWS</h2>
+<div class="note" data-text="modulo 7 almacenamiento s3 ebs efs glacier"><strong>💡 Idea principal:</strong> el módulo aborda almacenamiento de objetos (S3), bloques (EBS), archivos compartidos (EFS), seguridad y costos.</div>
+<h3 class="section-subtitle">🗂️ Amazon S3 y sus clases de almacenamiento</h3>
+<section class="grid">
+<article class="card" data-cat="storage" data-text="amazon s3 buckets objetos durabilidad escalable"><span class="tag m7">Módulo 7 · S3</span><h3>Amazon S3</h3><p class="def">Servicio administrado de almacenamiento en la nube que guarda datos como objetos dentro de buckets, con escalabilidad y alta durabilidad.</p><p class="compare"><strong>Idea rápida:</strong> guardar archivos en contenedores en línea.</p></article>
+<article class="card" data-cat="storage" data-text="bucket s3 región nombre objetos"><span class="tag m7">S3</span><h3>Bucket</h3><p class="def">Contenedor donde se almacenan objetos. Se crea en una región de AWS y luego se cargan los datos.</p><p class="compare"><strong>Idea rápida:</strong> una carpeta principal para organizar archivos.</p></article>
+<article class="card" data-cat="storage cost" data-text="s3 estándar acceso frecuente zonas disponibilidad"><span class="tag m7">Clase S3</span><h3>S3 Estándar</h3><p class="def">Para datos de acceso frecuente, con alta durabilidad y disponibilidad en varias zonas.</p><p class="compare"><strong>Uso:</strong> datos que necesitan acceso rápido y frecuente.</p></article>
+<article class="card" data-cat="storage cost" data-text="s3 standard ia acceso poco frecuente recuperación"><span class="tag m7">Clase S3</span><h3>S3 Estándar — Acceso poco frecuente (IA)</h3><p class="def">Adecuada para datos a los que se accede con poca frecuencia; la recuperación puede tener una tarifa asociada.</p><p class="compare"><strong>Uso:</strong> conservar datos que se recuperan ocasionalmente.</p></article>
+<article class="card" data-cat="storage cost" data-text="s3 intelligent tiering capas patrones acceso automático"><span class="tag m7">Clase S3</span><h3>S3 Intelligent-Tiering</h3><p class="def">Traslada automáticamente los objetos entre niveles según sus patrones de acceso.</p><p class="compare"><strong>Uso:</strong> cuando los patrones de acceso cambian o no se conocen.</p></article>
+<article class="card" data-cat="storage cost" data-text="s3 una zona acceso poco frecuente precio inferior"><span class="tag m7">Clase S3</span><h3>S3 Una zona — Acceso poco frecuente</h3><p class="def">Almacena datos en una sola zona de disponibilidad y ofrece un precio inferior al de S3 Estándar-IA.</p><p class="compare"><strong>Uso:</strong> datos poco frecuentes para los que es aceptable una sola zona.</p></article>
+<article class="card" data-cat="storage cost" data-text="amazon s3 glacier archivo bajo costo recuperación standard bulk expedited"><span class="tag m7">Clase S3</span><h3>Amazon S3 Glacier</h3><p class="def">Almacenamiento de archivo de bajo costo para copias de seguridad y conservación a largo plazo. Ofrece recuperación Expedited, Standard y Bulk.</p><p class="compare"><strong>Tiempos del material:</strong> Expedited, 1–5 minutos; Standard, 3–5 horas; Bulk, 5–12 horas.</p></article>
+<article class="card" data-cat="storage cost" data-text="s3 glacier deep archive archivo largo plazo menor costo"><span class="tag m7">Clase S3</span><h3>S3 Glacier Deep Archive</h3><p class="def">Almacenamiento de menor costo para conservar archivos a largo plazo; el material menciona periodos de siete a diez años.</p><p class="compare"><strong>Recuperación:</strong> el material señala menos de 12 horas.</p></article>
+<article class="card" data-cat="storage cost" data-text="políticas ciclo vida s3 mover eliminar objetos antigüedad"><span class="tag m7">S3</span><h3>Políticas de ciclo de vida</h3><p class="def">Permiten mover o eliminar objetos según su antigüedad y automatizar transiciones entre clases de almacenamiento.</p><p class="compare"><strong>Ejemplo:</strong> mover datos de S3 Estándar a Glacier y eliminarlos después del periodo definido.</p></article>
+<article class="card" data-cat="storage cost" data-text="precios s3 gb mes solicitudes put copy post list get transferencia entrada salida"><span class="tag m7">S3 · Costos</span><h3>Precios de Amazon S3</h3><p class="def">Dependen de la clase, volumen y tamaño de objetos, cantidad y tipo de solicitudes (GET, PUT, COPY, etc.) y transferencia de datos.</p><p class="compare"><strong>Según las diapositivas:</strong> se cobra almacenamiento por GB al mes; pueden cobrarse solicitudes y transferencias salientes. La transferencia entrante a S3 se muestra como gratuita.</p></article>
+<article class="card" data-cat="security storage" data-text="s3 glacier cifrado ssl tls iam aes-256 claves"><span class="tag m7">Seguridad</span><h3>Seguridad de S3 y Glacier</h3><p class="def">El material incluye cifrado en tránsito mediante SSL/TLS, cifrado del lado del servidor, control de acceso con IAM y cifrado AES-256 para Glacier con claves administradas.</p><p class="compare"><strong>Idea rápida:</strong> controlar quién accede a los datos y protegerlos durante el tránsito y almacenamiento.</p></article>
+</section>
+<h3 class="section-subtitle">🧱 Amazon EBS — Almacenamiento en bloques</h3>
+<section class="grid">
+<article class="card" data-cat="storage compute" data-text="amazon ebs elastic block store volumen bloques instancia ec2 disco arranque"><span class="tag m7">Módulo 7 · EBS</span><h3>Amazon EBS</h3><p class="def">Crea volúmenes de almacenamiento a nivel de bloques y los asocia a instancias EC2. Los volúmenes persisten independientemente de la instancia.</p><p class="compare"><strong>Usos:</strong> volúmenes de arranque, sistemas de archivos, bases de datos y aplicaciones empresariales.</p></article>
+<article class="card" data-cat="storage" data-text="almacenamiento bloques modificar parte archivo bloque"><span class="tag m7">Concepto</span><h3>Almacenamiento en bloques</h3><p class="def">Divide los datos en bloques; al modificar una parte, puede actualizarse el bloque correspondiente.</p><p class="compare"><strong>Comparación:</strong> cambiar una pieza específica sin reemplazar todo el conjunto.</p></article>
+<article class="card" data-cat="storage" data-text="tipos volumen ebs ssd uso general iops aprovisionadas hdd rendimiento frío"><span class="tag m7">EBS · Tipos</span><h3>Tipos de volúmenes EBS</h3><p class="def">El material distingue SSD de uso general, SSD con IOPS aprovisionadas y HDD optimizados para rendimiento o uso frío.</p><p class="compare"><strong>Elección:</strong> depende del rendimiento, IOPS y costo requerido.</p></article>
+<article class="card" data-cat="storage security" data-text="instantáneas snapshots ebs punto tiempo recrear volumen s3 gb mes"><span class="tag m7">EBS</span><h3>Instantáneas (snapshots)</h3><p class="def">Capturan el estado de un volumen en un momento dado y permiten crear uno nuevo. El material indica que se calcula el costo por GB-mes de datos almacenados en S3.</p><p class="compare"><strong>Uso:</strong> respaldar volúmenes y facilitar su recuperación.</p></article>
+<article class="card" data-cat="storage security" data-text="cifrado ebs volumen cifrado sin costo adicional"><span class="tag m7">Seguridad</span><h3>Cifrado de EBS</h3><p class="def">Los volúmenes EBS pueden cifrarse; las diapositivas indican que no tiene costo adicional.</p><p class="compare"><strong>Idea rápida:</strong> proteger los datos almacenados en los volúmenes.</p></article>
+<article class="card" data-cat="storage" data-text="elasticidad ebs aumentar capacidad cambiar tipos volumen"><span class="tag m7">EBS</span><h3>Elasticidad de EBS</h3><p class="def">Permite aumentar la capacidad y cambiar entre distintos tipos de volumen según las necesidades.</p><p class="compare"><strong>Idea rápida:</strong> adaptar el almacenamiento cuando cambian los requisitos.</p></article>
+<article class="card" data-cat="storage cost" data-text="ebs precios volumen gigabytes mes iops solicitudes transferencia entre regiones"><span class="tag m7">EBS · Costos</span><h3>Costos de EBS</h3><p class="def">Se considera la cantidad de almacenamiento aprovisionada por mes y, según el tipo, las IOPS o solicitudes. El material indica que la transferencia entrante es gratuita y la saliente entre regiones genera cargos.</p><p class="compare"><strong>Recuerda:</strong> revisa el tipo de volumen, capacidad y transferencias.</p></article>
+</section>
+<h3 class="section-subtitle">📁 Amazon EFS — Sistema de archivos compartido</h3>
+<section class="grid">
+<article class="card" data-cat="storage" data-text="amazon efs elastic file system archivos nube compartido elástico petabytes"><span class="tag m7">Módulo 7 · EFS</span><h3>Amazon EFS</h3><p class="def">Sistema de archivos administrado y compartido en la nube de AWS, con capacidad elástica y escalabilidad hasta petabytes.</p><p class="compare"><strong>Usos:</strong> big data, análisis, procesamiento multimedia, administración de contenido, servidores web y directorios principales.</p></article>
+<article class="card" data-cat="storage network" data-text="arquitectura efs vpc zonas disponibilidad subred privada interfaz red destino montaje"><span class="tag m7">EFS · Arquitectura</span><h3>Arquitectura de EFS</h3><p class="def">Utiliza destinos de montaje en zonas de disponibilidad dentro de una VPC; las instancias acceden al sistema mediante interfaces de red.</p><p class="compare"><strong>Idea rápida:</strong> varias instancias pueden acceder a un sistema de archivos compartido.</p></article>
+<article class="card" data-cat="storage network security" data-text="destino montaje efs id subred grupos seguridad misma vpc etiquetas"><span class="tag m7">EFS · Recursos</span><h3>Destino de montaje</h3><p class="def">Recurso de red que conecta las instancias al sistema de archivos. Incluye ID de subred y grupos de seguridad y debe estar en la misma VPC; el material indica uno por zona de disponibilidad.</p><p class="compare"><strong>También:</strong> los recursos pueden organizarse con etiquetas.</p></article>
+<article class="card" data-cat="storage" data-text="compatibilidad efs nfs versiones 4.0 4.1 amazon ec2 linux ami"><span class="tag m7">EFS</span><h3>Compatibilidad de EFS</h3><p class="def">El material señala compatibilidad con NFS 4.0 y 4.1 y con AMI basadas en Linux para Amazon EC2.</p><p class="compare"><strong>Idea rápida:</strong> conectar sistemas compatibles mediante un protocolo de archivos de red.</p></article>
+</section>
+<h3 class="section-subtitle">🪜 Implementación de Amazon EFS</h3>
+<section class="steps">
+<article class="step" data-cat="storage compute"><b>Paso 1</b>Crear recursos EC2 e iniciar la instancia.</article>
+<article class="step" data-cat="storage"><b>Paso 2</b>Crear el sistema de archivos EFS.</article>
+<article class="step" data-cat="storage network"><b>Paso 3</b>Crear destinos de montaje en subredes adecuadas.</article>
+<article class="step" data-cat="storage network"><b>Paso 4</b>Conectar instancias EC2 a los destinos.</article>
+<article class="step" data-cat="storage security"><b>Paso 5</b>Verificar recursos y protección de la cuenta AWS.</article>
+</section>
+<h3 class="section-subtitle">⚖️ Comparación rápida</h3>
+<section class="grid">
+<article class="card" data-cat="storage" data-text="comparación almacenamiento objetos bloques archivos s3 ebs efs"><span class="tag m7">Comparación</span><h3>S3, EBS y EFS</h3><p class="def"><strong>S3:</strong> objetos en buckets. <strong>EBS:</strong> bloques asociados a EC2. <strong>EFS:</strong> sistema de archivos compartido y elástico.</p><p class="compare"><strong>Regla rápida:</strong> objetos = S3; disco de bloques = EBS; archivos compartidos = EFS.</p></article>
+<article class="card" data-cat="storage cost" data-text="elegir almacenamiento latencia costo acceso frecuente archivo recuperación"><span class="tag m7">Comparación</span><h3>¿Qué almacenamiento elegir?</h3><p class="def">Considera acceso a los datos, velocidad de recuperación, necesidad de compartir archivos, durabilidad y presupuesto.</p><p class="compare"><strong>Regla rápida:</strong> Glacier para archivo a largo plazo; EBS para volúmenes EC2; EFS para archivos compartidos.</p></article>
+</section>
+</section>
+
   <div id="empty" class="empty">No se encontró ningún concepto con esa búsqueda.</div>
-  <footer>Glosario elaborado a partir de las diapositivas proporcionadas para los Módulos 1 al 6 de AWS Academy.</footer>
+  <footer>Glosario elaborado a partir de las diapositivas proporcionadas para los Módulos 1 al 7 de AWS Academy.</footer>
 </main>
 
 <script>
@@ -1286,6 +1338,8 @@ const mod5=document.getElementById('mod5');
 const btnMod5=document.getElementById('btnMod5');
 const mod6=document.getElementById('mod6');
 const btnMod6=document.getElementById('btnMod6');
+const mod7=document.getElementById('mod7');
+const btnMod7=document.getElementById('btnMod7');
 const topNote=document.querySelector('.container > .note');
 let filter='all';
 
@@ -1305,7 +1359,8 @@ function aplicarModulo(){
     '3':mod3,
     '4':mod4,
     '5':mod5,
-    '6':mod6
+    '6':mod6,
+    '7':mod7
   };
 
   // Si se selecciona un módulo, mostrar SOLO ese módulo.
@@ -1314,13 +1369,14 @@ function aplicarModulo(){
     elemento.hidden=!!modulo && modulo!==numero;
   });
 
-  [btnAll,btnMod1,btnMod2,btnMod3,btnMod4,btnMod5,btnMod6].forEach(b=>b.classList.remove('active'));
+  [btnAll,btnMod1,btnMod2,btnMod3,btnMod4,btnMod5,btnMod6,btnMod7].forEach(b=>b.classList.remove('active'));
   if(modulo==='1') btnMod1.classList.add('active');
   else if(modulo==='2') btnMod2.classList.add('active');
   else if(modulo==='3') btnMod3.classList.add('active');
   else if(modulo==='4') btnMod4.classList.add('active');
   else if(modulo==='5') btnMod5.classList.add('active');
   else if(modulo==='6') btnMod6.classList.add('active');
+  else if(modulo==='7') btnMod7.classList.add('active');
   else btnAll.classList.add('active');
 
   window.scrollTo(0,0);
