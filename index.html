@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AWS</title>
+<title>AWS — Glosario Unificado</title>
 <style>
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
@@ -32,7 +32,9 @@ button:hover,button.active{background:#263f7a;color:#fff;border-color:#263f7a}
 .tag.m4{background:#f0eaff;color:#6840a8}
 .tag.m5{background:#e8f4ff;color:#145b86}
 .tag.m6{background:#fff0f3;color:#a12648}
-.tag.m7{background:#e9f7e8;color:#26733b}\n.tag.m8{background:#e7f0ff;color:#234f9b}
+.tag.m7{background:#e9f7e8;color:#26733b}
+.tag.m8{background:#e7f0ff;color:#234f9b}
+.tag.m9{background:#fff4d9;color:#855600}
 .card h3{margin:0 0 8px;font-size:20px}
 .def{margin:0 0 12px}
 .compare{margin:0;padding:11px 12px;background:#f7f8fc;border-left:4px solid #536dfe;border-radius:8px;font-size:14px}
@@ -62,7 +64,7 @@ footer{text-align:center;color:#69728a;font-size:13px;margin-top:35px}
 <body>
 <header>
   <h1>☁️ AWS — Glosario Unificado</h1>
-  <p>Módulos 1 al 8 · Definiciones rápidas, comparaciones y complementos para estudiar.</p>
+  <p>Módulos 1 al 9 · Definiciones rápidas, comparaciones y complementos para estudiar.</p>
 </header>
 
 <main class="container">
@@ -89,6 +91,7 @@ footer{text-align:center;color:#69728a;font-size:13px;margin-top:35px}
      <button id="btnMod6" onclick="cambiarModulo('6')">📔 Módulo 6</button>
      <button id="btnMod7" onclick="cambiarModulo('7')">📒 Módulo 7</button>
      <button id="btnMod8" onclick="cambiarModulo('8')">📔 Módulo 8</button>
+     <button id="btnMod9" onclick="cambiarModulo('9')">📒 Módulo 9</button>
   </div>
 
   <div class="note">
@@ -1499,8 +1502,219 @@ footer{text-align:center;color:#69728a;font-size:13px;margin-top:35px}
     </section>
   </section>
 
+  <!-- ==================== MÓDULO 9 ==================== -->
+  <section id="mod9" class="module-block">
+    <h2 class="section-title">📒 Módulo 9 — Marco de Buena Arquitectura de AWS</h2>
+
+    <div class="note" data-text="modulo 9 marco buena arquitectura aws well architected framework pilares excelencia operativa seguridad fiabilidad eficacia rendimiento optimizacion costos">
+      <strong>Resumen del módulo:</strong> el Marco de Buena Arquitectura de AWS es una guía para diseñar, evaluar e implementar infraestructuras en la nube que sean seguras, de alto desempeño, resilientes y eficaces. Reúne prácticas recomendadas desarrolladas a partir de las lecciones aprendidas al revisar arquitecturas de clientes. El material presenta cinco pilares: excelencia operativa, seguridad, fiabilidad, eficacia del rendimiento y optimización de costos.
+    </div>
+
+    <h3 class="section-subtitle">🏛️ Arquitectura y Marco de Buena Arquitectura de AWS</h3>
+    <section class="grid">
+      <article class="card" data-cat="management" data-text="arquitectura diseño creación estructura arquitecto cliente responsable toma decisiones personal equipo encargado tamaño complejidad sistemas grandes">
+        <span class="tag m9">Módulo 9 · Arquitectura</span><h3>Diseño y creación de una arquitectura</h3>
+        <p class="def">El proceso de arquitectura parte del diseño de la estructura, considera al cliente o responsable de tomar decisiones y al personal encargado de la creación, hasta llegar a una estructura completa.</p>
+        <p class="compare"><strong>Idea rápida:</strong> los sistemas grandes requieren que los arquitectos administren su tamaño y complejidad.</p>
+      </article>
+      <article class="card" data-cat="management security" data-text="marco buena arquitectura aws well architected framework guia infraestructuras seguras alto desempeño resilientes eficaces evaluar implementar nube practicas recomendadas lecciones aprendidas revision arquitecturas clientes">
+        <span class="tag m9">Marco de AWS</span><h3>Marco de Buena Arquitectura de AWS</h3>
+        <p class="def">Guía para diseñar infraestructuras que sean seguras, de alto desempeño, resilientes y eficaces. Ofrece un enfoque uniforme para evaluar e implementar arquitecturas en la nube.</p>
+        <p class="compare"><strong>Origen de sus recomendaciones:</strong> prácticas desarrolladas a partir de las lecciones aprendidas durante la revisión de arquitecturas de clientes.</p>
+      </article>
+      <article class="card" data-cat="management" data-text="cinco pilares marco buena arquitectura excelencia operativa seguridad fiabilidad eficacia rendimiento optimizacion costos">
+        <span class="tag m9">Cinco pilares</span><h3>Los cinco pilares del marco</h3>
+        <p class="def">El marco organiza sus recomendaciones en cinco áreas que se complementan entre sí.</p>
+        <p class="compare"><strong>Pilares:</strong> 1. Excelencia operativa. 2. Seguridad. 3. Fiabilidad. 4. Eficacia del rendimiento. 5. Optimización de costos.</p>
+      </article>
+      <article class="card" data-cat="management security" data-text="organizacion pilar area practicas recomendadas texto pregunta contexto pregunta practicas recomendadas">
+        <span class="tag m9">Organización</span><h3>Organización de cada pilar</h3>
+        <p class="def">Cada pilar incluye un área de prácticas recomendadas, el texto de la pregunta, el contexto de la pregunta y las prácticas recomendadas relacionadas.</p>
+        <p class="compare"><strong>Ejemplo del material:</strong> en administración de identidad y acceso se pregunta cómo se administran las credenciales y la autenticación, se explica el riesgo y se presentan medidas concretas.</p>
+      </article>
+    </section>
+
+    <h3 class="section-subtitle">⚙️ Pilar de excelencia operativa</h3>
+    <section class="grid">
+      <article class="card" data-cat="management" data-text="excelencia operativa enfoque ejecutar monitorizar sistemas valor negocio mejorar continuamente procesos procedimientos auxiliares administracion automatizacion cambios respuesta eventos estandares operaciones diarias">
+        <span class="tag m9">Pilar 1 · Enfoque</span><h3>Excelencia operativa</h3>
+        <p class="def">Se centra en ejecutar y monitorizar los sistemas para ofrecer valor de negocio y mejorar continuamente los procesos y procedimientos auxiliares.</p>
+        <p class="compare"><strong>Temas clave:</strong> administración y automatización de cambios, respuesta a eventos y definición de estándares para administrar correctamente las operaciones diarias.</p>
+      </article>
+      <article class="card" data-cat="management" data-text="seis principios diseño excelencia operativa operaciones como codigo documentacion cambios frecuentes pequeños reversibles refinar procedimientos prever errores aprender errores eventos operativos">
+        <span class="tag m9">Excelencia operativa</span><h3>Seis principios de diseño</h3>
+        <p class="def">El material presenta seis principios para la excelencia operativa en la nube.</p>
+        <p class="compare"><strong>Principios:</strong> realizar operaciones como código; comentar sobre la documentación; realizar cambios frecuentes, pequeños y reversibles; refinar los procedimientos de las operaciones con frecuencia; prever errores; aprender de todos los errores y eventos operativos.</p>
+      </article>
+      <article class="card" data-cat="management" data-text="preguntas excelencia operativa preparacion prioridades estado carga trabajo defectos reparacion flujo produccion riesgos implementacion preparado admitir carga trabajo">
+        <span class="tag m9">Excelencia operativa · Preparación</span><h3>Preguntas sobre la preparación</h3>
+        <p class="def">El material propone revisar cómo se determinan las prioridades, cómo se diseña la carga de trabajo para comprender su estado, cómo se reducen defectos y se facilita la reparación, cómo se mitigan los riesgos de implementación y cómo se sabe si se está preparado para admitir una carga de trabajo.</p>
+        <p class="compare"><strong>Objetivo:</strong> comprobar que la carga de trabajo y el equipo estén preparados antes de operar.</p>
+      </article>
+      <article class="card" data-cat="management" data-text="preguntas excelencia operativa operacion estado carga trabajo estado operaciones administrar eventos cargas trabajo operaciones evolucion contribuir evolucion operaciones">
+        <span class="tag m9">Excelencia operativa · Operación</span><h3>Preguntas sobre operación y evolución</h3>
+        <p class="def">Durante la operación se revisa cómo se entiende el estado de la carga de trabajo y de las operaciones, y cómo se administran sus eventos. En evolución se pregunta cómo contribuir a la mejora de las operaciones.</p>
+        <p class="compare"><strong>Idea rápida:</strong> observar, administrar y aprender de la operación para hacerla evolucionar.</p>
+      </article>
+    </section>
+
+    <h3 class="section-subtitle">🛡️ Pilar de seguridad</h3>
+    <section class="grid">
+      <article class="card" data-cat="security" data-text="pilar seguridad proteger informacion sistemas recursos valor negocio evaluaciones riesgo estrategias mitigacion identificacion administracion quien actividad controles detectar eventos confidencialidad integridad datos">
+        <span class="tag m9">Pilar 2 · Enfoque</span><h3>Seguridad</h3>
+        <p class="def">Busca proteger la información, los sistemas y los recursos, a la vez que se aporta valor de negocio mediante evaluaciones de riesgo y estrategias de mitigación.</p>
+        <p class="compare"><strong>Temas clave:</strong> identificar y administrar quién puede realizar cada actividad; configurar controles para detectar eventos de seguridad; proteger sistemas y servicios; y proteger la confidencialidad e integridad de los datos.</p>
+      </article>
+      <article class="card" data-cat="security" data-text="siete principios diseño seguridad base solida identidades trazabilidad seguridad todas capas automatizar practicas recomendadas proteger datos transito reposo personas alejadas datos prepararse eventos seguridad">
+        <span class="tag m9">Seguridad</span><h3>Siete principios de diseño</h3>
+        <p class="def">El material enumera siete principios para mejorar la seguridad de una arquitectura.</p>
+        <p class="compare"><strong>Principios:</strong> implementar una base sólida de identidades; habilitar la trazabilidad; aplicar la seguridad en todas las capas; automatizar las prácticas recomendadas de seguridad; proteger los datos en tránsito y en reposo; mantener a las personas alejadas de los datos; prepararse para eventos de seguridad.</p>
+      </article>
+      <article class="card" data-cat="security" data-text="administracion identidad acceso credenciales autenticacion contraseñas tokens claves usuario raiz mfa autenticacion multifactor federacion centralizada rotar auditar credenciales">
+        <span class="tag m9">Seguridad · Identidad y acceso</span><h3>Administración de identidades y accesos</h3>
+        <p class="def">Los mecanismos de credenciales y autenticación incluyen contraseñas, tokens y claves que conceden acceso directo o indirecto a una carga de trabajo. Protegerlos ayuda a reducir el riesgo de uso accidental o malintencionado.</p>
+        <p class="compare"><strong>Prácticas recomendadas:</strong> definir requisitos de administración de identidades y accesos; proteger al usuario raíz; exigir MFA; automatizar el cumplimiento de controles de acceso; integrarse con un proveedor de federación centralizada; exigir requisitos para contraseñas; rotar credenciales con regularidad; y auditarlas periódicamente.</p>
+      </article>
+      <article class="card" data-cat="security" data-text="preguntas seguridad administracion identidades accesos credenciales autenticacion control acceso humano acceso programacion">
+        <span class="tag m9">Seguridad · Preguntas</span><h3>Preguntas sobre identidades y accesos</h3>
+        <p class="def">El marco invita a revisar cómo se administran las credenciales y la autenticación, cómo se controla el acceso humano y cómo se controla el acceso mediante programación.</p>
+        <p class="compare"><strong>Objetivo:</strong> saber quién puede acceder y qué acciones puede realizar.</p>
+      </article>
+      <article class="card" data-cat="security" data-text="preguntas seguridad controles deteccion investigar eventos amenazas emergentes proteccion infraestructura redes recursos informaticos proteccion datos clasificar reposo transito respuesta incidentes">
+        <span class="tag m9">Seguridad · Preguntas</span><h3>Controles, infraestructura, datos e incidentes</h3>
+        <p class="def">Las preguntas del material abarcan cómo detectar e investigar eventos de seguridad, defenderse de amenazas emergentes, proteger redes y recursos informáticos, clasificar los datos, protegerlos en reposo y tránsito y responder a un incidente.</p>
+        <p class="compare"><strong>Áreas:</strong> controles de detección, protección de infraestructuras, protección de datos y respuesta a incidentes.</p>
+      </article>
+    </section>
+
+    <h3 class="section-subtitle">🔗 Pilar de fiabilidad</h3>
+    <section class="grid">
+      <article class="card" data-cat="management" data-text="fiabilidad reliability capacidad sistema proporcionar funcionalidad cuando usuario sistema componentes hardware firmware software probabilidad funcionar previsto periodo especificado">
+        <span class="tag m9">Pilar 3 · Concepto</span><h3>Fiabilidad</h3>
+        <p class="def">Es una forma de medir la capacidad del sistema para proporcionar funcionalidad cuando el usuario lo desea. Considera todos los componentes del sistema: hardware, firmware y software.</p>
+        <p class="compare"><strong>Definición:</strong> es la probabilidad de que todo el sistema funcione según lo previsto durante un periodo especificado.</p>
+      </article>
+      <article class="card" data-cat="management" data-text="mtbf tiempo promedio entre errores mean time between failures tiempo total servicio cantidad errores sistema">
+        <span class="tag m9">Fiabilidad · Métrica</span><h3>MTBF — Tiempo promedio entre errores</h3>
+        <p class="def">Métrica que relaciona el tiempo total en servicio con la cantidad de errores del sistema.</p>
+        <p class="compare"><strong>Fórmula del material:</strong> MTBF = tiempo total en servicio / cantidad de errores del sistema.</p>
+      </article>
+      <article class="card" data-cat="management" data-text="mttf tiempo promedio para fallar mean time to failure mttr tiempo promedio reparacion mean time to repair ciclo sistema disponible falla reparado">
+        <span class="tag m9">Fiabilidad · Métricas</span><h3>MTTF y MTTR</h3>
+        <p class="def"><strong>MTTF:</strong> tiempo promedio para fallar. <strong>MTTR:</strong> tiempo promedio de reparación.</p>
+        <p class="compare"><strong>Relación mostrada:</strong> MTBF = MTTF + MTTR. El diagrama representa el ciclo entre el sistema disponible, la falla del componente y su reparación.</p>
+      </article>
+      <article class="card" data-cat="management" data-text="disponibilidad uptime tiempo normal operacion tiempo total porcentaje actividad 99 99.9 99.99 cinco nueves 99.999">
+        <span class="tag m9">Fiabilidad · Disponibilidad</span><h3>Disponibilidad</h3>
+        <p class="def">Se calcula como el tiempo normal de operación dividido entre el tiempo total. Puede expresarse como porcentaje de tiempo de actividad durante un periodo, por ejemplo un año.</p>
+        <p class="compare"><strong>Ejemplo del material:</strong> cinco nueves representan una disponibilidad del 99,999 %.</p>
+      </article>
+      <article class="card" data-cat="management" data-text="alta disponibilidad degradacion sistema disponible minimizar tiempo inactividad intervencion humana">
+        <span class="tag m9">Fiabilidad · Alta disponibilidad</span><h3>Alta disponibilidad</h3>
+        <p class="def">El sistema puede resistir cierta medida de degradación sin dejar de estar disponible.</p>
+        <p class="compare"><strong>Objetivos:</strong> minimizar el tiempo de inactividad y reducir al mínimo la intervención humana.</p>
+      </article>
+      <article class="card" data-cat="management" data-text="capas disponibilidad 99 3 dias 15 horas 99.9 8 horas 45 minutos 99.95 4 horas 22 minutos 99.99 52 minutos 99.999 5 minutos aplicaciones lotes comercio electronico cajero telecomunicaciones">
+        <span class="tag m9">Fiabilidad · Niveles</span><h3>Capas de disponibilidad</h3>
+        <p class="def">La diapositiva relaciona el porcentaje de disponibilidad con la disrupción máxima estimada en un año y ejemplos de aplicaciones.</p>
+        <p class="compare"><strong>Valores mostrados:</strong> 99 % = 3 días, 15 horas (procesamiento por lotes); 99,9 % = 8 horas, 45 minutos (herramientas internas); 99,95 % = 4 horas, 22 minutos (comercio en línea y punto de venta); 99,99 % = 52 minutos (transmisión y entrega de videos); 99,999 % = 5 minutos (cajeros automáticos y telecomunicaciones).</p>
+      </article>
+      <article class="card" data-cat="management" data-text="factores disponibilidad tolerancia errores redundancia integrada componentes aplicacion permanecer operativos capacidad recuperacion procesos politicas procedimientos restablecimiento servicio evento catastrofico escalabilidad aumento necesidades capacidad sin cambiar diseño">
+        <span class="tag m9">Fiabilidad · Factores</span><h3>Factores que influyen en la disponibilidad</h3>
+        <p class="def"><strong>Tolerancia a errores:</strong> redundancia integrada de los componentes y capacidad para permanecer operativos. <strong>Capacidad de recuperación:</strong> procesos, políticas y procedimientos para restablecer el servicio tras un evento catastrófico. <strong>Escalabilidad:</strong> habilidad de adaptarse a aumentos en las necesidades de capacidad sin cambiar el diseño.</p>
+        <p class="compare"><strong>Idea rápida:</strong> resistir fallos, recuperarse y adaptarse al crecimiento.</p>
+      </article>
+      <article class="card" data-cat="management" data-text="cinco principios diseño fiabilidad probar procedimientos recuperacion recuperarse automaticamente errores escalar horizontal disponibilidad evitar estimaciones capacidad administrar cambios automatizacion">
+        <span class="tag m9">Fiabilidad</span><h3>Cinco principios de diseño</h3>
+        <p class="def">El material presenta cinco principios para aumentar la fiabilidad.</p>
+        <p class="compare"><strong>Principios:</strong> probar los procedimientos de recuperación; recuperarse automáticamente de los errores; escalar horizontalmente para aumentar la disponibilidad total del sistema; evitar asumir estimaciones sobre capacidad; administrar los cambios en la automatización.</p>
+      </article>
+      <article class="card" data-cat="management" data-text="pilar fiabilidad enfoque evitar errores recuperarse rapidamente satisfacer demanda negocio clientes configuracion recursos infraestructura proyectos planificacion recuperacion gestion cambios">
+        <span class="tag m9">Fiabilidad · Enfoque</span><h3>Enfoque y temas clave de fiabilidad</h3>
+        <p class="def">Evitar errores y recuperarse rápidamente después de que ocurran para satisfacer la demanda del negocio y de los clientes.</p>
+        <p class="compare"><strong>Temas clave:</strong> configuración, recursos, infraestructura y proyectos, planificación de la recuperación y gestión de cambios.</p>
+      </article>
+      <article class="card" data-cat="management" data-text="preguntas fiabilidad limites servicio topologia red cambios demanda monitoreo recursos implementar cambios copias seguridad datos errores componentes probar resiliencia planificar recuperacion desastres">
+        <span class="tag m9">Fiabilidad · Preguntas</span><h3>Preguntas sobre la fiabilidad</h3>
+        <p class="def">El material plantea preguntas sobre la administración de límites del servicio y topología de red; adaptación a cambios en la demanda; monitoreo de recursos e implementación de cambios; copias de seguridad; tratamiento de errores de componentes; pruebas de resiliencia y planificación de recuperación ante desastres.</p>
+        <p class="compare"><strong>Objetivo:</strong> comprobar que el sistema pueda soportar fallos y recuperarse.</p>
+      </article>
+    </section>
+
+    <h3 class="section-subtitle">💰 Pilar de optimización de costos</h3>
+    <section class="grid">
+      <article class="card" data-cat="cost" data-text="optimizacion costos preguntas conciencia gasto controlar uso monitorear uso costo retirar recursos recursos rentables evaluar costo seleccionar servicios tipo tamaño recursos modelos precios transferencia datos ajuste oferta demanda optimizacion tiempo">
+        <span class="tag m9">Pilar 5 · Preguntas</span><h3>Áreas de optimización de costos</h3>
+        <p class="def">El material agrupa las preguntas de optimización de costos en cuatro áreas de prácticas recomendadas.</p>
+        <p class="compare"><strong>Áreas:</strong> conciencia del gasto (controlar, monitorear y retirar recursos); recursos rentables (evaluar costos, servicios, tipos y tamaños de recursos, modelos de precios y transferencia de datos); ajuste entre oferta y demanda; y optimización a lo largo del tiempo.</p>
+      </article>
+      <article class="card" data-cat="cost" data-text="pilar optimizacion costos enfoque ejecutar sistemas aportar valor negocio menor precio eliminar gastos innecesarios conocimiento control gastos cantidad adecuada tipos recursos analisis gastos tiempo escalado necesidades negocio gastos excesivos">
+        <span class="tag m9">Pilar 5 · Enfoque</span><h3>Optimización de costos</h3>
+        <p class="def">Consiste en ejecutar sistemas para aportar valor de negocio al menor precio y eliminar los gastos innecesarios.</p>
+        <p class="compare"><strong>Temas clave:</strong> conocimiento y control de los gastos; selección de la cantidad y los tipos adecuados de recursos; análisis de los gastos a lo largo del tiempo; escalado para satisfacer las necesidades del negocio sin gastos excesivos.</p>
+      </article>
+      <article class="card" data-cat="cost" data-text="conciencia gasto controlar uso monitorear uso costo retirar recursos optimizacion costos">
+        <span class="tag m9">Costos · Conciencia del gasto</span><h3>Conciencia del gasto</h3>
+        <p class="def">Consiste en conocer y controlar el uso y los costos de los recursos.</p>
+        <p class="compare"><strong>Preguntas:</strong> ¿Cómo se controla el uso?, ¿cómo se monitorean el uso y el costo?, ¿cómo se retiran los recursos que ya no se necesitan?</p>
+      </article>
+      <article class="card" data-cat="cost" data-text="recursos rentables costo seleccionar servicios tipo tamaño recursos modelos precios transferencia datos">
+        <span class="tag m9">Costos · Recursos rentables</span><h3>Selección de recursos rentables</h3>
+        <p class="def">Evalúa el costo al seleccionar servicios y comprueba los objetivos de costos al elegir el tipo y tamaño de los recursos.</p>
+        <p class="compare"><strong>También considera:</strong> utilizar modelos de precios para reducir costos y planificar la optimización de la transferencia de datos.</p>
+      </article>
+      <article class="card" data-cat="cost" data-text="ajuste oferta demanda recursos ajustar oferta recursos demanda optimizacion costos">
+        <span class="tag m9">Costos · Oferta y demanda</span><h3>Ajuste entre la oferta y la demanda</h3>
+        <p class="def">Revisa cómo se ajusta la oferta de recursos a la demanda de la carga de trabajo.</p>
+        <p class="compare"><strong>Idea rápida:</strong> disponer de los recursos necesarios sin mantener capacidad innecesaria.</p>
+      </article>
+      <article class="card" data-cat="cost" data-text="optimizacion a lo largo del tiempo evaluar servicios nuevos costos">
+        <span class="tag m9">Costos · Evolución</span><h3>Optimización a lo largo del tiempo</h3>
+        <p class="def">Consiste en evaluar los servicios nuevos y revisar periódicamente si existen alternativas más adecuadas.</p>
+        <p class="compare"><strong>Idea rápida:</strong> la optimización de costos es un proceso continuo.</p>
+      </article>
+    </section>
+
+    <h3 class="section-subtitle">🚀 Pilar de eficacia del rendimiento</h3>
+    <section class="grid">
+      <article class="card" data-cat="compute management" data-text="eficacia rendimiento performance efficiency utilizar tecnologia recursos informaticos eficaz cumplir requisitos sistema mantener eficacia demanda evolucion tecnologias seleccion tipos tamaños recursos monitoreo decisiones">
+        <span class="tag m9">Pilar 4 · Enfoque</span><h3>Eficacia del rendimiento</h3>
+        <p class="def">Busca utilizar la TI y los recursos informáticos de forma eficaz para cumplir los requisitos del sistema y mantener esa eficacia a medida que cambia la demanda y evolucionan las tecnologías.</p>
+        <p class="compare"><strong>Temas clave:</strong> seleccionar los tipos y tamaños adecuados de recursos según los requisitos de la carga de trabajo; monitorear el rendimiento; tomar decisiones fundamentadas para mantener la eficacia conforme evolucionan las necesidades del negocio.</p>
+      </article>
+      <article class="card" data-cat="compute management" data-text="cinco principios rendimiento democratizar tecnologias avanzadas escala mundial minutos arquitectura sin servidor serverless experimentar frecuentemente compatibilidad mecanica">
+        <span class="tag m9">Rendimiento</span><h3>Cinco principios de diseño</h3>
+        <p class="def">El material enumera cinco principios para mejorar la eficacia del rendimiento.</p>
+        <p class="compare"><strong>Principios:</strong> democratizar las tecnologías avanzadas; adquirir escala mundial en cuestión de minutos; utilizar arquitecturas sin servidor; experimentar más a menudo; disponer de compatibilidad mecánica.</p>
+      </article>
+      <article class="card" data-cat="compute management" data-text="preguntas eficacia rendimiento seleccion arquitectura mejor rendimiento solucion informatica almacenamiento base datos red revision nuevas versiones monitoreo recursos compensaciones">
+        <span class="tag m9">Rendimiento · Preguntas</span><h3>Selección, revisión, monitoreo y compensaciones</h3>
+        <p class="def">El marco pregunta cómo seleccionar la arquitectura, la solución informática, el almacenamiento, la base de datos y la red con mejor rendimiento; cómo mejorar la carga de trabajo para aprovechar nuevas versiones; y cómo monitorear los recursos.</p>
+        <p class="compare"><strong>Compensaciones:</strong> también invita a evaluar las compensaciones que afectan el rendimiento.</p>
+      </article>
+    </section>
+
+    <h3 class="section-subtitle">🧰 AWS Trusted Advisor</h3>
+    <section class="grid">
+      <article class="card" data-cat="management cost security" data-text="aws trusted advisor herramienta en linea instrucciones tiempo real aprovisionar recursos practicas recomendadas examina entorno aws recomendaciones cinco categorias optimizacion costos rendimiento seguridad tolerancia errores service limits limites servicio">
+        <span class="tag m9">Herramienta de AWS</span><h3>AWS Trusted Advisor</h3>
+        <p class="def">Herramienta en línea que ofrece instrucciones en tiempo real para ayudar a aprovisionar recursos según las prácticas recomendadas de AWS. Examina el entorno de AWS y ofrece recomendaciones.</p>
+        <p class="compare"><strong>Cinco categorías:</strong> optimización de costos, rendimiento, seguridad, tolerancia a errores y límites de servicio (Service Limits).</p>
+      </article>
+    </section>
+
+    <h3 class="section-subtitle">📌 Repaso de las preguntas del marco</h3>
+    <section class="grid">
+      <article class="card" data-cat="management" data-text="repaso marco buena arquitectura preguntas pilares evaluar arquitectura carga trabajo estado operaciones cambios errores recuperacion seguridad costos rendimiento">
+        <span class="tag m9">Repaso general</span><h3>Evaluación de una arquitectura</h3>
+        <p class="def">Las preguntas del marco sirven para examinar cómo se prepara, opera y evoluciona una carga de trabajo; cómo se protegen identidades, infraestructura y datos; cómo se administran cambios y errores; y cómo se seleccionan y monitorean recursos.</p>
+        <p class="compare"><strong>Enfoque:</strong> revisar la arquitectura desde los cinco pilares, no solamente desde el funcionamiento técnico de un servicio.</p>
+      </article>
+    </section>
+  </section>
+
   <div id="empty" class="empty">No se encontró ningún concepto con esa búsqueda.</div>
-  <footer>Glosario elaborado a partir de las diapositivas proporcionadas para los Módulos 1 al 8 de AWS Academy.</footer>
+  <footer>Glosario elaborado a partir de las diapositivas proporcionadas para los Módulos 1 al 9 de AWS Academy.</footer>
 </main>
 
 <script>
@@ -1525,6 +1739,8 @@ const mod7=document.getElementById('mod7');
 const btnMod7=document.getElementById('btnMod7');
 const mod8=document.getElementById('mod8');
 const btnMod8=document.getElementById('btnMod8');
+const mod9=document.getElementById('mod9');
+const btnMod9=document.getElementById('btnMod9');
 const topNote=document.querySelector('.container > .note');
 let filter='all';
 
@@ -1546,7 +1762,8 @@ function aplicarModulo(){
     '5':mod5,
     '6':mod6,
     '7':mod7,
-    '8':mod8
+    '8':mod8,
+    '9':mod9
   };
 
   // Si se selecciona un módulo, mostrar SOLO ese módulo.
@@ -1555,7 +1772,7 @@ function aplicarModulo(){
     elemento.hidden=!!modulo && modulo!==numero;
   });
 
-  [btnAll,btnMod1,btnMod2,btnMod3,btnMod4,btnMod5,btnMod6,btnMod7,btnMod8].forEach(b=>b.classList.remove('active'));
+  [btnAll,btnMod1,btnMod2,btnMod3,btnMod4,btnMod5,btnMod6,btnMod7,btnMod8,btnMod9].forEach(b=>b.classList.remove('active'));
   if(modulo==='1') btnMod1.classList.add('active');
   else if(modulo==='2') btnMod2.classList.add('active');
   else if(modulo==='3') btnMod3.classList.add('active');
@@ -1563,6 +1780,8 @@ function aplicarModulo(){
   else if(modulo==='5') btnMod5.classList.add('active');
   else if(modulo==='6') btnMod6.classList.add('active');
   else if(modulo==='7') btnMod7.classList.add('active');
+  else if(modulo==='8') btnMod8.classList.add('active');
+  else if(modulo==='9') btnMod9.classList.add('active');
   else btnAll.classList.add('active');
 
   window.scrollTo(0,0);
